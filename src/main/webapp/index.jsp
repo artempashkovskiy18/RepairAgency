@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ремонтне агентство</title>
+    <title>Repair agency</title>
     <link href="CSS/style.css" rel="stylesheet">
     <script src = "JS/main.js"></script>
 
@@ -41,19 +41,19 @@
 
 <nav>
     <ul class="topMenu">
-        <li><a href="index.jsp" class="down">Головна</a>
+        <li><a href="index.jsp" class="down">Main</a>
             <ul class="submenu">
-                <li><a href="">Ціни</a></li>
-                <li><a href="">Створити замовлення</a></li>
+                <li><a href="">Prices</a></li>
+                <li><a href="">Create order</a></li>
             </ul>
         </li>
-        <li><a href="">Новини</a></li>
-        <li><a href="">Контакти</a></li>
-        <li><a href="">Про нас</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="">Contacts</a></li>
+        <li><a href="">About us</a></li>
     </ul>
     <div>
-        <a class="float-right btn btn-outline-primary" id = "sign-in">Увійти</a>
-        <a class="float-right btn btn-outline-primary" id = "sign-up">Зареєструватись</a>
+        <a class="float-right btn btn-outline-primary" id = "sign-in">Sign in</a>
+        <a class="float-right btn btn-outline-primary" id = "sign-up">Sign up</a>
     </div>
 </nav>
 
@@ -61,27 +61,29 @@
 <div class = "registration-container" id = "registration">
     <div class="card">
         <article class="card-body">
-            <a href="" class="float-right btn btn-outline-primary">Зареєструватись</a>
-            <h4 class="card-title mb-4 mt-1">Увійти</h4>
-            <form>
+            <a href="" class="float-right btn btn-outline-primary">Sign up</a>
+            <h4 class="card-title mb-4 mt-1">Sign in</h4>
+
+            <form action="reg" method="post" id="sign-in-form">
                 <div class="form-group">
-                    <label>Ваш email</label>
-                    <input name="" class="form-control" placeholder="Email" type="email">
+                    <label>Your email</label>
+                    <input name="email" class="form-control" placeholder="Email" type="email">
                 </div> <!-- form-group// -->
                 <div class="form-group">
-                    <a class="float-right" href="#">Забули пароль?</a>
-                    <label>Ваш пароль</label>
-                    <input class="form-control" placeholder="******" type="password">
+                    <a class="float-right" href="#">Forgot your password?</a>
+                    <label>Your password</label>
+                    <input name="password" class="form-control" placeholder="******" type="password">
                 </div> <!-- form-group// -->
                 <div class="form-group">
                     <div class="checkbox">
-                        <label> <input type="checkbox"> Зберегти пароль </label>
+                        <label> <input name="save-password" type="checkbox" checked /> Save password </label>
                     </div> <!-- checkbox .// -->
                 </div> <!-- form-group// -->
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> Увійти  </button>
+                    <button type="submit" class="btn btn-primary btn-block" id="submit-sign-in">Sign in</button>
                 </div> <!-- form-group// -->
             </form>
+
         </article>
     </div>
 </div>
