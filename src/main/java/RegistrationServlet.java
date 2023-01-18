@@ -14,10 +14,10 @@ public class RegistrationServlet extends HttpServlet {
         //super.doPost(req, resp);
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        String[] savePassword = req.getParameterValues("save-password");
+        String savePassword = req.getParameter("save-password");
         PrintWriter out = resp.getWriter();
         out.println(email);
         out.println(password);
-        out.println(Arrays.toString(savePassword));
+        out.println(savePassword);
     }
 }
