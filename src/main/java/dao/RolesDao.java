@@ -80,7 +80,7 @@ public class RolesDao {
         String query = "insert into roles(" + DBColumnsNames.ROLE_ID + ", "
                 + DBColumnsNames.ROLE_NAME+ ") values(default, ?)";
         try (PreparedStatement insertStatement = connection.prepareStatement(query)) {
-            insertStatement.setString(1, role.getName());
+            insertStatement.setString(1, role.name().toLowerCase());
 
             return insertStatement.executeUpdate() != 0;
         } catch (SQLException e) {
@@ -90,21 +90,21 @@ public class RolesDao {
         }
     }
 
-    public boolean updateRole(Role role) {
-        Connection connection = ConnectionPool.getInstance().getConnection();
-
-        String query = "update roles " +
-                "set " + DBColumnsNames.ROLE_NAME + " = ? "
-                + "where " + DBColumnsNames.ROLE_ID + " = ?";
-        try (PreparedStatement updateStatement = connection.prepareStatement(query)) {
-            updateStatement.setString(1, role.getName());
-            updateStatement.setInt(2, getRoleIdByRole(role));
-
-            return updateStatement.executeUpdate() != 0;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
-        }
-    }
+    //public boolean updateRole(Role role) {
+    //    Connection connection = ConnectionPool.getInstance().getConnection();
+//
+    //    String query = "update roles " +
+    //            "set " + DBColumnsNames.ROLE_NAME + " = ? "
+    //            + "where " + DBColumnsNames.ROLE_ID + " = ?";
+    //    try (PreparedStatement updateStatement = connection.prepareStatement(query)) {
+    //        updateStatement.setString(1, role.name().toLowerCase());
+    //        updateStatement.setInt(2, getRoleIdByRole(role));
+//
+    //        return updateStatement.executeUpdate() != 0;
+    //    } catch (SQLException e) {
+    //        throw new RuntimeException(e);
+    //    } finally {
+    //        ConnectionPool.getInstance().releaseConnection(connection);
+    //    }
+    //}
 }

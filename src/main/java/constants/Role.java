@@ -1,7 +1,7 @@
 package constants;
 
 public enum Role {
-    USER("user"), MANAGER("manager"), CRAFTSMAN("craftsman"), TEST("test1");
+    USER("user"), MANAGER("manager"), CRAFTSMAN("craftsman"), TEST("test");
 
     private final String name;
     Role(String name) {

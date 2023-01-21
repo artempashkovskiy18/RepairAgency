@@ -42,9 +42,4 @@ class RolesDaoTest {
     void addRole() {
         assertTrue(RolesDao.getInstance().addRole(Role.TEST));
     }
-
-    @Test
-    void updateRole() {
-        assertTrue(RolesDao.getInstance().updateRole(Role.TEST));
-    }
 }

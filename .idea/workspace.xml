@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="done orderDao passes tests and added OrderDao that passes tests too">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dao/RolesDaoTest.java" afterDir="false" />
+    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="added RolesDao but nota all tests pass">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/constants/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/RolesDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/RolesDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674309754632</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added RolesDao but nota all tests pass">
+      <created>1674312544412</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674312544412</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +324,8 @@
     <MESSAGE value="RegistrationServlet update" />
     <MESSAGE value="added ConnectionPool, added UserDao, method getAllUsers in it and tests for them" />
     <MESSAGE value="done orderDao passes tests and added OrderDao that passes tests too" />
-    <option name="LAST_COMMIT_MESSAGE" value="done orderDao passes tests and added OrderDao that passes tests too" />
+    <MESSAGE value="added RolesDao but nota all tests pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="added RolesDao but nota all tests pass" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
