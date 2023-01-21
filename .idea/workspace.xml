@@ -9,15 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="added ConnectionPool, added UserDao, method getAllUsers in it and tests for them">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dao/OrderDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="done orderDao passes tests and added OrderDao that passes tests too">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dao/RolesDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/implementations/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
         <option value="JUnit5 Test Class" />
       </list>
     </option>
@@ -83,8 +80,8 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderDaoTest.removeOrder">
-    <configuration name="OrderDaoTest.addOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RolesDaoTest.updateRole">
+    <configuration name="RolesDaoTest.addRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -93,14 +90,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
-      <option name="METHOD_NAME" value="addOrder" />
+      <option name="MAIN_CLASS_NAME" value="dao.RolesDaoTest" />
+      <option name="METHOD_NAME" value="addRole" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderDaoTest.getAllOrders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RolesDaoTest.getAllRoles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -109,14 +106,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
-      <option name="METHOD_NAME" value="getAllOrders" />
+      <option name="MAIN_CLASS_NAME" value="dao.RolesDaoTest" />
+      <option name="METHOD_NAME" value="getAllRoles" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderDaoTest.removeOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RolesDaoTest.getRoleIdByRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -125,14 +122,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
-      <option name="METHOD_NAME" value="removeOrder" />
+      <option name="MAIN_CLASS_NAME" value="dao.RolesDaoTest" />
+      <option name="METHOD_NAME" value="getRoleIdByRole" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderDaoTest.updateOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RolesDaoTest.removeRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -141,14 +138,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
-      <option name="METHOD_NAME" value="updateOrder" />
+      <option name="MAIN_CLASS_NAME" value="dao.RolesDaoTest" />
+      <option name="METHOD_NAME" value="removeRole" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RolesDaoTest.updateRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -157,8 +154,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
-      <option name="METHOD_NAME" value="updateUser" />
+      <option name="MAIN_CLASS_NAME" value="dao.RolesDaoTest" />
+      <option name="METHOD_NAME" value="updateRole" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -253,11 +250,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderDaoTest.removeOrder" />
-        <item itemvalue="JUnit.OrderDaoTest.updateOrder" />
-        <item itemvalue="JUnit.OrderDaoTest.getAllOrders" />
-        <item itemvalue="JUnit.OrderDaoTest.addOrder" />
-        <item itemvalue="JUnit.UserDaoTest.updateUser" />
+        <item itemvalue="JUnit.RolesDaoTest.updateRole" />
+        <item itemvalue="JUnit.RolesDaoTest.addRole" />
+        <item itemvalue="JUnit.RolesDaoTest.getAllRoles" />
+        <item itemvalue="JUnit.RolesDaoTest.removeRole" />
+        <item itemvalue="JUnit.RolesDaoTest.getRoleIdByRole" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674052406976</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="done orderDao passes tests and added OrderDao that passes tests too">
+      <created>1674309754632</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674309754632</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +316,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="RegistrationServlet update" />
     <MESSAGE value="added ConnectionPool, added UserDao, method getAllUsers in it and tests for them" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ConnectionPool, added UserDao, method getAllUsers in it and tests for them" />
+    <MESSAGE value="done orderDao passes tests and added OrderDao that passes tests too" />
+    <option name="LAST_COMMIT_MESSAGE" value="done orderDao passes tests and added OrderDao that passes tests too" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
