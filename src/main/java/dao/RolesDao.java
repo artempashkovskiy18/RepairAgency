@@ -76,7 +76,7 @@ public class RolesDao {
         String query = "delete from roles where " + DBColumnsNames.ROLE_NAME + " = ?";
 
         try (PreparedStatement removeStatement = connection.prepareStatement(query)) {
-            removeStatement.setString(1, role.getName());
+            removeStatement.setString(1, role.name().toLowerCase());
             return removeStatement.executeUpdate() != 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
