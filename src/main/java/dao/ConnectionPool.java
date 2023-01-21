@@ -29,7 +29,7 @@ public class ConnectionPool {
     private static final int POOL_SIZE = 10;
     private static final String url = "jdbc:mysql://localhost:3306/repair_agency";
     private static final String user = "root";
-    private static final String password = "Qwertyu2_";
+    private static final String password = "ргн4";
 
 
     private ConnectionPool() {

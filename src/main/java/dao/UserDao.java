@@ -5,10 +5,7 @@ import constants.DBColumnsNames;
 import constants.Role;
 import models.implementations.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -27,7 +24,6 @@ public class UserDao {
     }
 
     public List<User> getAllUsers() {
-        //Connection connection = ConnectionPool.getInstance().getConnection();
         List<User> result = new ArrayList<>();
 
 
@@ -71,10 +67,62 @@ public class UserDao {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             ConnectionPool.getInstance().releaseConnection(connection);
         }
 
         return result;
+    }
+
+    public boolean removeUser(User user) {
+        Connection connection = ConnectionPool.getInstance().getConnection();
+
+        String query = "delete from users where" + DBColumnsNames.USER_ID + " = " + user.getId();
+
+        try (PreparedStatement removeStatement = connection.prepareStatement(query)) {
+            return removeStatement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            ConnectionPool.getInstance().releaseConnection(connection);
+        }
+    }
+
+    public boolean addUser(User user) {
+        Connection connection = ConnectionPool.getInstance().getConnection();
+
+        String query = "insert into users(?, ?, ?, ?, ?, ?) values(default, ?, ?, ?, ?, ?)";
+        try (PreparedStatement insertStatement = connection.prepareStatement(query)) {
+            insertStatement.setString(1, DBColumnsNames.USER_ID);
+            insertStatement.setString(2, DBColumnsNames.USER_NAME);
+            insertStatement.setString(3, DBColumnsNames.USER_EMAIL);
+            insertStatement.setString(4, DBColumnsNames.USER_PASSWORD);
+            insertStatement.setString(5, DBColumnsNames.USER_ROLE_ID);
+            insertStatement.setString(6, DBColumnsNames.USER_PHONE);
+
+
+            insertStatement.setString(7, user.getName());
+            insertStatement.setString(8, user.getEmail());
+            insertStatement.setString(9, user.getPassword());
+            insertStatement.setString(11, user.getPhone());
+
+            //TODO
+            switch (user.getRole()) {
+                case USER:
+                    insertStatement.setInt(10, 1);
+                    break;
+                case MANAGER:
+                    insertStatement.setInt(10, 2);
+                    break;
+                case CRAFTSMAN:
+                    insertStatement.setInt(10, 3);
+                    break;
+            }
+
+            return insertStatement.execute();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -1,5 +1,14 @@
 package constants;
 
 public enum Role {
-    USER(), MANAGER(), CRAFTSMAN()
+    USER("user"), MANAGER("manager"), CRAFTSMAN("craftsman");
+
+    private final String name;
+    Role(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

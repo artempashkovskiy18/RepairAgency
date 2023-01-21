@@ -24,4 +24,19 @@ class UserDaoTest {
                 Role.MANAGER));
         assertEquals(usersExpected, usersActual);
     }
+
+    @Test
+    void removeUser() {
+    }
+
+    @Test
+    void addUser() {
+        UserDao userDao = UserDao.getInstance();
+        User Artem = new User("Artem",
+                "+380964568447",
+                "artempashkovskiy18@gmail.com",
+                "123",
+                Role.MANAGER);
+        assertTrue(userDao.addUser(Artem));
+    }
 }

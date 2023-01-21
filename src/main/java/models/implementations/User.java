@@ -40,6 +40,7 @@ public class User implements IUser {
         return id == user.id && name.equals(user.name) && Objects.equals(phone, user.phone) && email.equals(user.email) && password.equals(user.password) && role == user.role;
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, phone, email, password, role);
@@ -48,5 +49,30 @@ public class User implements IUser {
     @Override
     public Order createOrder(int price, String car, OrderStatus status) {
         return new Order( price, car, this, status);
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Role getRole() {
+        return role;
     }
 }

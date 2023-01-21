@@ -1,6 +1,5 @@
 package dao;
 
-import com.mysql.cj.jdbc.ConnectionImpl;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;

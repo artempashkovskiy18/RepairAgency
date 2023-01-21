@@ -10,23 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="added ConnectionPool, added UserDao, method getAllUsers in it and tests for them">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/constants/DBColumnsNames.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/filter/RegistrationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dao/ConnectionPoolTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/ICraftsman.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/IManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/Craftsman.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/Manager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/implementations/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/implementations/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/ConnectionPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/ConnectionPoolTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,25 +52,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Artem/.m2/repository/mysql/mysql-connector-java/8.0.27/mysql-connector-java-8.0.27.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.32.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4229885",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Artem\JavaProjects\RepairAgency\src\main\webapp" />
@@ -92,7 +83,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoTest.getAllUsers">
+  <component name="RunManager" selected="JUnit.UserDaoTest.addUser">
     <configuration name="ConnectionPoolTest.getConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
@@ -136,6 +127,22 @@
       <option name="PACKAGE_NAME" value="dao" />
       <option name="MAIN_CLASS_NAME" value="dao.ConnectionPoolTest" />
       <option name="METHOD_NAME" value="releaseConnection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoTest.addUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepairAgency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
+      <option name="METHOD_NAME" value="addUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -246,9 +253,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDaoTest.addUser" />
+        <item itemvalue="JUnit.ConnectionPoolTest.getConnection" />
         <item itemvalue="JUnit.UserDaoTest.getAllUsers" />
         <item itemvalue="JUnit.ConnectionPoolTest.releaseConnection" />
-        <item itemvalue="JUnit.ConnectionPoolTest.getConnection" />
         <item itemvalue="JUnit.ConnectionPoolTest.getInstance" />
       </list>
     </recent_temporary>
@@ -305,5 +313,16 @@
     <MESSAGE value="RegistrationServlet update" />
     <MESSAGE value="added ConnectionPool, added UserDao, method getAllUsers in it and tests for them" />
     <option name="LAST_COMMIT_MESSAGE" value="added ConnectionPool, added UserDao, method getAllUsers in it and tests for them" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/UserDao.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
