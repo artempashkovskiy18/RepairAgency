@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="added RolesDao but nota all tests pass">
+    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="updated RolesDao. Now it passes tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/RolesDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/RolesDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RolesDaoTest.updateRole">
+  <component name="RunManager" selected="JUnit.UserDaoTest.getAllUsers">
     <configuration name="RolesDaoTest.addRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
@@ -113,22 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RolesDaoTest.getRoleIdByRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepairAgency" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.RolesDaoTest" />
-      <option name="METHOD_NAME" value="getRoleIdByRole" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RolesDaoTest.removeRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
@@ -156,6 +141,22 @@
       <option name="PACKAGE_NAME" value="dao" />
       <option name="MAIN_CLASS_NAME" value="dao.RolesDaoTest" />
       <option name="METHOD_NAME" value="updateRole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoTest.getAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepairAgency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
+      <option name="METHOD_NAME" value="getAllUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -250,11 +251,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDaoTest.getAllUsers" />
         <item itemvalue="JUnit.RolesDaoTest.updateRole" />
         <item itemvalue="JUnit.RolesDaoTest.addRole" />
         <item itemvalue="JUnit.RolesDaoTest.getAllRoles" />
         <item itemvalue="JUnit.RolesDaoTest.removeRole" />
-        <item itemvalue="JUnit.RolesDaoTest.getRoleIdByRole" />
       </list>
     </recent_temporary>
   </component>
@@ -302,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674312544412</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated RolesDao. Now it passes tests">
+      <created>1674313377695</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674313377695</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,14 +333,15 @@
     <MESSAGE value="added ConnectionPool, added UserDao, method getAllUsers in it and tests for them" />
     <MESSAGE value="done orderDao passes tests and added OrderDao that passes tests too" />
     <MESSAGE value="added RolesDao but nota all tests pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="added RolesDao but nota all tests pass" />
+    <MESSAGE value="updated RolesDao. Now it passes tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated RolesDao. Now it passes tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dao/UserDao.java</url>
-          <line>128</line>
+          <line>122</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

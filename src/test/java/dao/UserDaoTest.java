@@ -20,7 +20,7 @@ class UserDaoTest {
                 "Artem",
                 "+380964568447",
                 "artempashkovskiy18@gmail.com",
-                "123",
+                "12345",
                 Role.MANAGER));
         assertEquals(usersExpected, usersActual);
     }

@@ -108,6 +108,7 @@ public class OrderDao {
         }
     }
 
+    //TODO
     private OrderStatus getStatusByStatusId(int id) {
         OrderStatus status = null;
         switch (id) {
@@ -130,6 +131,7 @@ public class OrderDao {
         return status;
     }
 
+    //TODO
     private int getStatusIdByStatus(OrderStatus status){
         int id = 0;
         switch (status){

@@ -12,9 +12,6 @@ import java.util.List;
 
 public class UserDao {
     private static UserDao instance;
-    private static final String USER_NAME = "user_name";
-    private static final String USER_ROLE = "role_name";
-
     public static UserDao getInstance() {
         if (instance == null) {
             instance = new UserDao();
@@ -26,10 +23,7 @@ public class UserDao {
         List<User> result = new ArrayList<>();
 
 
-        String selectUsers = "select us.id_user, us.name user_name, us.phone, us.email, us.password, rls.name role_name " +
-                "from users us " +
-                "inner join roles rls " +
-                "on us.id_role = rls.id_role";
+        String selectUsers = "select * from users";
         Connection connection = ConnectionPool.getInstance().getConnection();
 
         try (Statement statement = connection.createStatement();
@@ -37,11 +31,11 @@ public class UserDao {
 
             while (usersResultSet.next()) {
                 int id = usersResultSet.getInt(DBColumnsNames.USER_ID);
-                String name = usersResultSet.getString(UserDao.USER_NAME);
+                String name = usersResultSet.getString(DBColumnsNames.USER_NAME);
                 String email = usersResultSet.getString(DBColumnsNames.USER_EMAIL);
                 String phone = usersResultSet.getString(DBColumnsNames.USER_PHONE);
                 String password = usersResultSet.getString(DBColumnsNames.USER_PASSWORD);
-                Role role = getRoleByRoleString(usersResultSet.getString(UserDao.USER_ROLE));
+                Role role = RolesDao.getInstance().getRoleById(usersResultSet.getInt(DBColumnsNames.USER_ROLE_ID));
 
                 result.add(new User(id,
                         name,
@@ -97,7 +91,7 @@ public class UserDao {
             insertStatement.setString(1, user.getName());
             insertStatement.setString(2, user.getEmail());
             insertStatement.setString(3, user.getPassword());
-            insertStatement.setInt(4, getRoleIdByRole(user.getRole()));
+            insertStatement.setInt(4, RolesDao.getInstance().getRoleIdByRole(user.getRole()));
             insertStatement.setString(5, user.getPhone());
 
             return insertStatement.executeUpdate() != 0;
@@ -122,7 +116,7 @@ public class UserDao {
             updateStatement.setString(1, user.getName());
             updateStatement.setString(2, user.getEmail());
             updateStatement.setString(3, user.getPassword());
-            updateStatement.setInt(4, getRoleIdByRole(user.getRole()));
+            updateStatement.setInt(4, RolesDao.getInstance().getRoleIdByRole(user.getRole()));
             updateStatement.setString(5, user.getPhone());
             updateStatement.setInt(6, user.getId());
 
@@ -133,40 +127,4 @@ public class UserDao {
             ConnectionPool.getInstance().releaseConnection(connection);
         }
     }
-
-    //TODO
-    private int getRoleIdByRole(Role role){
-        int roleId = 0;
-        switch (role) {
-            case USER:
-                roleId = 1;
-                break;
-            case MANAGER:
-                roleId = 2;
-                break;
-            case CRAFTSMAN:
-                roleId = 3;
-                break;
-        }
-        return roleId;
-    }
-
-    //TODO
-    private Role getRoleByRoleString(String stringRole){
-        Role role = null;
-        switch (stringRole) {
-            case "user":
-                role = Role.USER;
-                break;
-            case "manager":
-                role = Role.MANAGER;
-                break;
-            case "craftsman":
-                role = Role.CRAFTSMAN;
-                break;
-        }
-        return role;
-    }
-
-
 }

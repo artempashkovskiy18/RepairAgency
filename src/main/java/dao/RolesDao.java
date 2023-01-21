@@ -48,6 +48,17 @@ public class RolesDao {
         return result;
     }
 
+    public Role getRoleById(int id){
+        Map<Integer, Role> roles = getAllRoles();
+        Role result = null;
+        for (Map.Entry<Integer, Role> entry : roles.entrySet()) {
+            if(entry.getKey() == id){
+                result = entry.getValue();
+            }
+        }
+        return result;
+    }
+
     public int getRoleIdByRole(Role role){
         Map<Integer, Role> rolesWithIds = getAllRoles();
         int id = 0;
