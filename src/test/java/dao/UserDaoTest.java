@@ -27,6 +27,12 @@ class UserDaoTest {
 
     @Test
     void removeUser() {
+        User Artem = new User(5,"Artem",
+                "+380964568447",
+                "artempashkovskiy18@gmail.com",
+                "123",
+                Role.MANAGER);
+        assertTrue(UserDao.getInstance().removeUser(Artem));
     }
 
     @Test
@@ -38,5 +44,16 @@ class UserDaoTest {
                 "123",
                 Role.MANAGER);
         assertTrue(userDao.addUser(Artem));
+    }
+
+    @Test
+    void updateUser() {
+        User Artem = new User(1,"Artem",
+                "+380964568447",
+                "artempashkovskiy18@gmail.com",
+                "12345",
+                Role.MANAGER);
+        assertTrue(UserDao.getInstance().updateUser(Artem));
+
     }
 }

@@ -1,7 +1,6 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ public class ConnectionPool {
     private static final int POOL_SIZE = 10;
     private static final String url = "jdbc:mysql://localhost:3306/repair_agency";
     private static final String user = "root";
-    private static final String password = "ргн4";
+    private static final String password = "Qwertyu2_";
 
 
     private ConnectionPool() {
