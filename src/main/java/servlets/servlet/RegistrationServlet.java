@@ -13,7 +13,6 @@ import java.io.PrintWriter;
 public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doPost(req, resp);
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         String savePassword = req.getParameter("save-password");

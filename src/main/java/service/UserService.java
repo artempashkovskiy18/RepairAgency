@@ -29,6 +29,17 @@ public class UserService {
         return userDao.getUserById(id);
     }
 
+    public User getUserByEmail(String email){
+        UserDao userDao = UserDao.getInstance();
+        List<User> allUsers = userDao.getAllUsers();
+        for (User user : allUsers) {
+            if(user.getEmail().equals(email)){
+                return user;
+            }
+        }
+        return null;
+    }
+
     public boolean removeUser(User user){
         UserDao userDao = UserDao.getInstance();
         return userDao.removeUser(user);
