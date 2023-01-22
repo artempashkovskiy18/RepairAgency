@@ -9,13 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="done all TODOs in UserDao">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/StatusDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dao/StatusDaoTest.java" afterDir="false" />
+    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="addUser test do not pass">
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StatusDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StatusDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +28,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -347,15 +348,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="done all TODOs in UserDao" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/UserDao.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="models.implementations.User" memberName="email" />

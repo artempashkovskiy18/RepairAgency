@@ -12,6 +12,9 @@ import java.util.List;
 public class OrderDao {
     private static OrderDao instance;
 
+    private OrderDao() {
+    }
+
     public static OrderDao getInstance() {
         if (instance == null) {
             instance = new OrderDao();
@@ -45,6 +48,16 @@ public class OrderDao {
         }
 
         return result;
+    }
+
+    public Order getOrderById(int id){
+        List<Order> allOrders = getAllOrders();
+        for (Order order : allOrders) {
+            if(order.getId() == id){
+                return order;
+            }
+        }
+        return null;
     }
 
     public boolean removeOrder(Order order) {

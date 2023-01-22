@@ -11,6 +11,9 @@ import java.util.Map;
 public class StatusDao {
     private static StatusDao instance;
 
+    private StatusDao() {
+    }
+
     public static StatusDao getInstance() {
         if (instance == null) {
             instance = new StatusDao();

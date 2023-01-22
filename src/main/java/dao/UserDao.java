@@ -19,6 +19,9 @@ public class UserDao {
         return instance;
     }
 
+    private UserDao() {
+    }
+
     public List<User> getAllUsers() {
         List<User> result = new ArrayList<>();
 

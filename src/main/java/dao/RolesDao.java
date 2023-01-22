@@ -15,6 +15,9 @@ import java.util.Map;
 public class RolesDao {
     private static RolesDao instance;
 
+    private RolesDao() {
+    }
+
     public static RolesDao getInstance() {
         if (instance == null) {
             instance = new RolesDao();
