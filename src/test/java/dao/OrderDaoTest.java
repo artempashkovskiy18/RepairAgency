@@ -22,7 +22,7 @@ class OrderDaoTest {
 
     @Test
     void removeOrder() {
-        Order order = new Order(2, 1300, "vaz2109", UserDao.getInstance().getUserById(1), OrderStatus.PENDING_PAYMENT);
+        Order order = new Order(1, 1300, "vaz2109", UserDao.getInstance().getUserById(1), OrderStatus.PENDING_PAYMENT);
         assertTrue(OrderDao.getInstance().removeOrder(order));
     }
 

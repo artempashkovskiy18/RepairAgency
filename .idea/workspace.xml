@@ -9,14 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="addUser test do not pass">
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="added user and order services">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StatusDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StatusDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/OrderDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/OrderDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,55 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StatusDaoTest.removeStatus">
+  <component name="RunManager" selected="JUnit.OrderDaoTest.removeOrder">
+    <configuration name="OrderDaoTest.addOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepairAgency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
+      <option name="METHOD_NAME" value="addOrder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderDaoTest.getAllOrders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepairAgency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
+      <option name="METHOD_NAME" value="getAllOrders" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderDaoTest.removeOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepairAgency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
+      <option name="METHOD_NAME" value="removeOrder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StatusDaoTest.addStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
@@ -95,54 +140,6 @@
       <option name="PACKAGE_NAME" value="dao" />
       <option name="MAIN_CLASS_NAME" value="dao.StatusDaoTest" />
       <option name="METHOD_NAME" value="addStatus" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatusDaoTest.getAllStatuses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepairAgency" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StatusDaoTest" />
-      <option name="METHOD_NAME" value="getAllStatuses" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatusDaoTest.getStatusById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepairAgency" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StatusDaoTest" />
-      <option name="METHOD_NAME" value="getStatusById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatusDaoTest.getStatusIdByStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepairAgency" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StatusDaoTest" />
-      <option name="METHOD_NAME" value="getStatusIdByStatus" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -253,11 +250,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderDaoTest.removeOrder" />
+        <item itemvalue="JUnit.OrderDaoTest.getAllOrders" />
+        <item itemvalue="JUnit.OrderDaoTest.addOrder" />
         <item itemvalue="JUnit.StatusDaoTest.removeStatus" />
         <item itemvalue="JUnit.StatusDaoTest.addStatus" />
-        <item itemvalue="JUnit.StatusDaoTest.getStatusIdByStatus" />
-        <item itemvalue="JUnit.StatusDaoTest.getStatusById" />
-        <item itemvalue="JUnit.StatusDaoTest.getAllStatuses" />
       </list>
     </recent_temporary>
   </component>
@@ -320,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674314508531</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added user and order services">
+      <created>1674348627595</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674348627595</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +349,8 @@
     <MESSAGE value="added RolesDao but nota all tests pass" />
     <MESSAGE value="updated RolesDao. Now it passes tests" />
     <MESSAGE value="done all TODOs in UserDao" />
-    <option name="LAST_COMMIT_MESSAGE" value="done all TODOs in UserDao" />
+    <MESSAGE value="added user and order services" />
+    <option name="LAST_COMMIT_MESSAGE" value="added user and order services" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
