@@ -1,36 +1,34 @@
-package models.implementations;
+package models;
 
 import constants.OrderStatus;
-import models.IOrder;
 
 import java.util.Objects;
 
-public class Order implements IOrder {
+public class Order{
     private int id;
     private OrderStatus status;
     private double price;
 
 
     private final User user;
-    private final String car;
+    private final String description;
 
-    public Order(double price, String car, User user, OrderStatus status) {
+    public Order(double price, String description, User user, OrderStatus status) {
         this.status = status;
         this.price = price;
         this.user = user;
-        this.car = car;
+        this.description = description;
         this.id = -1;
     }
 
-    public Order(int id, double price, String car, User user, OrderStatus status) {
+    public Order(int id, double price, String description, User user, OrderStatus status) {
         this.status = status;
         this.price = price;
         this.user = user;
-        this.car = car;
+        this.description = description;
         this.id = id;
     }
 
-    @Override
     public void changeStatus(OrderStatus newStatus) {
         status = newStatus;
     }
@@ -52,8 +50,8 @@ public class Order implements IOrder {
         return user;
     }
 
-    public String getCar() {
-        return car;
+    public String getDescription() {
+        return description;
     }
 
     @Override
@@ -61,11 +59,11 @@ public class Order implements IOrder {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return id == order.id && Double.compare(order.price, price) == 0 && status == order.status && user.equals(order.user) && car.equals(order.car);
+        return id == order.id && Double.compare(order.price, price) == 0 && status == order.status && user.equals(order.user) && description.equals(order.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, price, user, car);
+        return Objects.hash(id, status, price, user, description);
     }
 }

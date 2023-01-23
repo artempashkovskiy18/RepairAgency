@@ -1,7 +1,7 @@
 package service;
 
 import dao.UserDao;
-import models.implementations.User;
+import models.User;
 
 import java.util.List;
 

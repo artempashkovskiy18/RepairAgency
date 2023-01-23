@@ -9,11 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="updated OrderDao">
+    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="added user and order services">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/FrontController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/DBColumnsNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/DBColumnsNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StatusDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/IOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/IUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/filter/RegistrationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/filter/RegistrationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/servlet/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/OrderDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/OrderDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/RolesDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/StatusDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,26 +67,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.32.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4229885",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.32.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4229885&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Artem\JavaProjects\RepairAgency\src\main\webapp" />
@@ -81,8 +98,8 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderDaoTest.removeOrder">
-    <configuration name="OrderDaoTest.addOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserDaoTest.getUserById">
+    <configuration name="OrderDaoTest.getOrderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -92,13 +109,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
       <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
-      <option name="METHOD_NAME" value="addOrder" />
+      <option name="METHOD_NAME" value="getOrderById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderDaoTest.getAllOrders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderDaoTest.updateOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -108,13 +125,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
       <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
-      <option name="METHOD_NAME" value="getAllOrders" />
+      <option name="METHOD_NAME" value="updateOrder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderDaoTest.removeOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest.getAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -123,14 +140,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.OrderDaoTest" />
-      <option name="METHOD_NAME" value="removeOrder" />
+      <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
+      <option name="METHOD_NAME" value="getAllUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StatusDaoTest.addStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest.getUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -139,14 +156,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StatusDaoTest" />
-      <option name="METHOD_NAME" value="addStatus" />
+      <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
+      <option name="METHOD_NAME" value="getUserById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StatusDaoTest.removeStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
         <pattern>
@@ -155,8 +172,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StatusDaoTest" />
-      <option name="METHOD_NAME" value="removeStatus" />
+      <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
+      <option name="METHOD_NAME" value="updateUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -251,11 +268,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderDaoTest.removeOrder" />
-        <item itemvalue="JUnit.OrderDaoTest.getAllOrders" />
-        <item itemvalue="JUnit.OrderDaoTest.addOrder" />
-        <item itemvalue="JUnit.StatusDaoTest.removeStatus" />
-        <item itemvalue="JUnit.StatusDaoTest.addStatus" />
+        <item itemvalue="JUnit.UserDaoTest.getUserById" />
+        <item itemvalue="JUnit.UserDaoTest.getAllUsers" />
+        <item itemvalue="JUnit.UserDaoTest.updateUser" />
+        <item itemvalue="JUnit.OrderDaoTest.getOrderById" />
+        <item itemvalue="JUnit.OrderDaoTest.updateOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +292,6 @@
       <workItem from="1674255907630" duration="6389000" />
       <workItem from="1674262780821" duration="227000" />
       <workItem from="1674329240296" duration="2693000" />
-      <workItem from="1674398230636" duration="1110000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1673971140269</created>
@@ -326,14 +342,7 @@
       <option name="project" value="LOCAL" />
       <updated>1674348627595</updated>
     </task>
-    <task id="LOCAL-00008" summary="updated OrderDao">
-      <created>1674349143631</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1674349143631</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,8 +368,7 @@
     <MESSAGE value="updated RolesDao. Now it passes tests" />
     <MESSAGE value="done all TODOs in UserDao" />
     <MESSAGE value="added user and order services" />
-    <MESSAGE value="updated OrderDao" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated OrderDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="added user and order services" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

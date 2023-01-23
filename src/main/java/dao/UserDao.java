@@ -3,7 +3,7 @@ package dao;
 
 import constants.DBColumnsNames;
 import constants.Role;
-import models.implementations.User;
+import models.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ import java.util.List;
 
 public class UserDao {
     private static UserDao instance;
+
     public static UserDao getInstance() {
         if (instance == null) {
             instance = new UserDao();
@@ -38,7 +39,7 @@ public class UserDao {
                 String email = usersResultSet.getString(DBColumnsNames.USER_EMAIL);
                 String phone = usersResultSet.getString(DBColumnsNames.USER_PHONE);
                 String password = usersResultSet.getString(DBColumnsNames.USER_PASSWORD);
-                Role role = RolesDao.getInstance().getRoleById(usersResultSet.getInt(DBColumnsNames.USER_ROLE_ID));
+                Role role = getRoleById(usersResultSet.getInt(DBColumnsNames.USER_ROLE_ID));
 
                 result.add(new User(id,
                         name,
@@ -56,14 +57,28 @@ public class UserDao {
         return result;
     }
 
-    public User getUserById(int id){
-        List<User> allUsers = getAllUsers();
-        for (User user : allUsers) {
-            if(user.getId() == id){
-                return user;
-            }
+    public User getUserById(int id) {
+        String query = "select * from users where id_user = ?";
+        Connection connection = ConnectionPool.getInstance().getConnection();
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+
+            ResultSet usersResultSet = statement.executeQuery();
+
+            usersResultSet.next();
+            String name = usersResultSet.getString(DBColumnsNames.USER_NAME);
+            String email = usersResultSet.getString(DBColumnsNames.USER_EMAIL);
+            String phone = usersResultSet.getString(DBColumnsNames.USER_PHONE);
+            String password = usersResultSet.getString(DBColumnsNames.USER_PASSWORD);
+            Role role = getRoleById(usersResultSet.getInt(DBColumnsNames.USER_ROLE_ID));
+
+            return new User(id, name, phone, email, password, role);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            ConnectionPool.getInstance().releaseConnection(connection);
         }
-        return null;
     }
 
     public boolean removeUser(User user) {
@@ -84,23 +99,23 @@ public class UserDao {
     public boolean addUser(User user) {
         Connection connection = ConnectionPool.getInstance().getConnection();
 
-        String query = "insert into users("+ DBColumnsNames.USER_ID +", "
-                + DBColumnsNames.USER_NAME +", "
-                + DBColumnsNames.USER_EMAIL +", "
-                + DBColumnsNames.USER_PASSWORD +", "
-                + DBColumnsNames.USER_ROLE_ID +", "
-                + DBColumnsNames.USER_PHONE +") values(default, ?, ?, ?, ?, ?)";
+        String query = "insert into users(" + DBColumnsNames.USER_ID + ", "
+                + DBColumnsNames.USER_NAME + ", "
+                + DBColumnsNames.USER_EMAIL + ", "
+                + DBColumnsNames.USER_PASSWORD + ", "
+                + DBColumnsNames.USER_ROLE_ID + ", "
+                + DBColumnsNames.USER_PHONE + ") values(default, ?, ?, ?, ?, ?)";
         try (PreparedStatement insertStatement = connection.prepareStatement(query)) {
             insertStatement.setString(1, user.getName());
             insertStatement.setString(2, user.getEmail());
             insertStatement.setString(3, user.getPassword());
-            insertStatement.setInt(4, RolesDao.getInstance().getRoleIdByRole(user.getRole()));
+            insertStatement.setInt(4, user.getRole().getId());
             insertStatement.setString(5, user.getPhone());
 
             return insertStatement.executeUpdate() != 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             ConnectionPool.getInstance().releaseConnection(connection);
         }
     }
@@ -109,25 +124,37 @@ public class UserDao {
         Connection connection = ConnectionPool.getInstance().getConnection();
 
         String query = "update users " +
-                "set "+ DBColumnsNames.USER_NAME +" = ?, "
-                + DBColumnsNames.USER_EMAIL +" = ?, "
-                + DBColumnsNames.USER_PASSWORD +" = ?, "
-                + DBColumnsNames.USER_ROLE_ID +" = ?, "
-                + DBColumnsNames.USER_PHONE +" = ? " +
-                "where "+ DBColumnsNames.USER_ID +" = ?";
+                "set " + DBColumnsNames.USER_NAME + " = ?, "
+                + DBColumnsNames.USER_EMAIL + " = ?, "
+                + DBColumnsNames.USER_PASSWORD + " = ?, "
+                + DBColumnsNames.USER_ROLE_ID + " = ?, "
+                + DBColumnsNames.USER_PHONE + " = ? " +
+                "where " + DBColumnsNames.USER_ID + " = ?";
         try (PreparedStatement updateStatement = connection.prepareStatement(query)) {
             updateStatement.setString(1, user.getName());
             updateStatement.setString(2, user.getEmail());
             updateStatement.setString(3, user.getPassword());
-            updateStatement.setInt(4, RolesDao.getInstance().getRoleIdByRole(user.getRole()));
+            updateStatement.setInt(4, user.getRole().getId());
             updateStatement.setString(5, user.getPhone());
             updateStatement.setInt(6, user.getId());
 
             return updateStatement.executeUpdate() != 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             ConnectionPool.getInstance().releaseConnection(connection);
         }
+    }
+
+    private Role getRoleById(int id) {
+        Role result = null;
+        if (id == Role.USER.getId()) {
+            result = Role.USER;
+        } else if (id == Role.MANAGER.getId()) {
+            result = Role.MANAGER;
+        } else if (id == Role.CRAFTSMAN.getId()) {
+            result = Role.CRAFTSMAN;
+        }
+        return result;
     }
 }
