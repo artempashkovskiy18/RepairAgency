@@ -6,18 +6,8 @@ import models.User;
 import java.util.List;
 
 public class UserService {
-    private static UserService instance;
-
     public UserService() {
     }
-
-    public static UserService getInstance (){
-        if(instance ==  null){
-            instance = new UserService();
-        }
-        return instance;
-    }
-
 
     public List<User> getAllUsers(){
         UserDao userDao = UserDao.getInstance();

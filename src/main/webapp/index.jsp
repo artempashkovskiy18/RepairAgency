@@ -48,7 +48,7 @@
             <a href="" class="float-right btn btn-outline-primary" name="close">X</a>
             <h4 class="card-title mb-4 mt-1">Sign in</h4>
 
-            <form action="" method="post" id="sign-in-form">
+            <form action="login" method="post" id="sign-in-form">
                 <div class="form-group">
                     <label>Your email</label>
                     <input name="email" class="form-control" placeholder="Email" type="email">
@@ -78,10 +78,14 @@
             <a href="" class="float-right btn btn-outline-primary" name="close">X</a>
             <h4 class="card-title mb-4 mt-1">Sign up</h4>
 
-            <form action="" method="post" id="sign-up-form">
+            <form action="registration" method="post" id="sign-up-form">
                 <div class="form-group">
                     <label>Your name</label>
                     <input name="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label>Your phone</label>
+                    <input name="phone" class="form-control" placeholder="Phone" type = "tel">
                 </div>
                 <div class="form-group">
                     <label>Your email</label>
@@ -93,7 +97,7 @@
                 </div>
                 <div class="form-group">
                     <label>Repeat your password</label>
-                    <input name="password" class="form-control" placeholder="******" type="password">
+                    <input name="password-repeat" class="form-control" placeholder="******" type="password">
                 </div><!-- form-group// -->
                 <div class="form-group">
                     <div class="checkbox">
