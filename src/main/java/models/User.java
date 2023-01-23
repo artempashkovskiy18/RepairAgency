@@ -1,12 +1,11 @@
-package models.implementations;
+package models;
 
 import constants.OrderStatus;
 import constants.Role;
-import models.IUser;
 
 import java.util.Objects;
 
-public class User implements IUser {
+public class User{
     private int id;
     private String name;
     private String phone;
@@ -45,12 +44,6 @@ public class User implements IUser {
     public int hashCode() {
         return Objects.hash(id, name, phone, email, password, role);
     }
-
-    @Override
-    public Order createOrder(int price, String car, OrderStatus status) {
-        return new Order( price, car, this, status);
-    }
-
 
     public int getId() {
         return id;

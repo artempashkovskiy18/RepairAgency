@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class ConnectionPool {
+    private static final int POOL_SIZE = 10;
+    private static final String url = "jdbc:mysql://localhost:3306/repair_agency";
+    private static final String user = "root";
+    private static final String password = "Qwertyu2_";
+
+
     private static ConnectionPool instance;
     private final List<Connection> connections = new ArrayList<>();
     private final List<Connection> usedConnections = new ArrayList<>();
@@ -25,19 +31,14 @@ public class ConnectionPool {
         return Objects.hash(connections, usedConnections);
     }
 
-    private static final int POOL_SIZE = 10;
-    private static final String url = "jdbc:mysql://localhost:3306/repair_agency";
-    private static final String user = "root";
-    private static final String password = "ргн4";
-
 
     private ConnectionPool() {
-        for (int i = 0; i < POOL_SIZE; i++){
+        for (int i = 0; i < POOL_SIZE; i++) {
             connections.add(createConnection());
         }
     }
 
-    private static Connection createConnection(){
+    private static Connection createConnection() {
         try {
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
@@ -46,14 +47,14 @@ public class ConnectionPool {
     }
 
 
-    public static ConnectionPool getInstance(){
-        if(instance == null){
+    public static ConnectionPool getInstance() {
+        if (instance == null) {
             instance = new ConnectionPool();
         }
         return instance;
     }
 
-    public Connection getConnection(){
+    public Connection getConnection() {
         Connection connection = connections
                 .remove(connections.size() - 1);
         usedConnections.add(connection);

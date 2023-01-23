@@ -1,7 +1,7 @@
 package dao;
 
 import constants.Role;
-import models.implementations.User;
+import models.User;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ class UserDaoTest {
                 "Artem",
                 "+380964568447",
                 "artempashkovskiy18@gmail.com",
-                "12345",
+                "123",
                 Role.MANAGER));
         assertEquals(usersExpected, usersActual);
     }
@@ -51,9 +51,19 @@ class UserDaoTest {
         User Artem = new User(1,"Artem",
                 "+380964568447",
                 "artempashkovskiy18@gmail.com",
-                "12345",
+                "123",
                 Role.MANAGER);
         assertTrue(UserDao.getInstance().updateUser(Artem));
 
+    }
+
+    @Test
+    void getUserById() {
+        User Artem = new User(1,"Artem",
+                "+380964568447",
+                "artempashkovskiy18@gmail.com",
+                "123",
+                Role.MANAGER);
+        assertEquals(Artem, UserDao.getInstance().getUserById(1));
     }
 }
