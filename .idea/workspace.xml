@@ -9,29 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1191a320-dcde-426e-839e-a085c99fcf67" name="Changes" comment="added user and order services">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/FrontController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
+    <list default="true" id="801d70c1-1a65-42a9-976e-e013ce1ffcc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/commands/RegistrationCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/DBColumnsNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/DBColumnsNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/OrderStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/constants/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/RolesDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StatusDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/IOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/IUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/implementations/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/filter/RegistrationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/filter/RegistrationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/OrderDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/OrderDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/RolesDaoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/StatusDaoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/commands/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/commands/ICommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/servlet/FrontController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/FrontController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +88,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoTest.getUserById">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.84">
     <configuration name="OrderDaoTest.getOrderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
@@ -266,6 +256,14 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.OrderDaoTest.getOrderById" />
+      <item itemvalue="JUnit.OrderDaoTest.updateOrder" />
+      <item itemvalue="JUnit.UserDaoTest.getAllUsers" />
+      <item itemvalue="JUnit.UserDaoTest.getUserById" />
+      <item itemvalue="JUnit.UserDaoTest.updateUser" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.84" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserDaoTest.getUserById" />

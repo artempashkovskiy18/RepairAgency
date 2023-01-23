@@ -1,7 +1,7 @@
 package constants;
 
 public enum Role {
-    USER(2), MANAGER(3), CRAFTSMAN(5);
+    USER(1), MANAGER(2), CRAFTSMAN(3);
     private final int id;
 
     Role(int id) {

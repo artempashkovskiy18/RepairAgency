@@ -8,7 +8,7 @@ import java.util.List;
 public class UserService {
     private static UserService instance;
 
-    private UserService() {
+    public UserService() {
     }
 
     public static UserService getInstance (){
@@ -38,6 +38,10 @@ public class UserService {
             }
         }
         return null;
+    }
+
+    public boolean checkIfUserExists(String email){
+        return getUserByEmail(email) != null;
     }
 
     public boolean removeUser(User user){
