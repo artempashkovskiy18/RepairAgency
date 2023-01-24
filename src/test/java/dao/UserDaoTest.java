@@ -66,4 +66,17 @@ class UserDaoTest {
                 Role.MANAGER);
         assertEquals(Artem, UserDao.getInstance().getUserById(1));
     }
+
+    @Test
+    void getUserByEmail() {
+        User wrongUser = UserDao.getInstance().getUserByEmail("ijfgirj");
+        User rightUser = UserDao.getInstance().getUserByEmail("artempashkovskiy18@gmail.com");
+        User Artem = new User(1,"Artem",
+                "+380964568447",
+                "artempashkovskiy18@gmail.com",
+                "123",
+                Role.MANAGER);
+        assertNull(wrongUser);
+        assertEquals(Artem, rightUser);
+    }
 }

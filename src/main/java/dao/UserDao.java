@@ -64,22 +64,54 @@ public class UserDao {
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
 
-            ResultSet usersResultSet = statement.executeQuery();
+            ResultSet resultSet = statement.executeQuery();
 
-            usersResultSet.next();
-            String name = usersResultSet.getString(DBColumnsNames.USER_NAME);
-            String email = usersResultSet.getString(DBColumnsNames.USER_EMAIL);
-            String phone = usersResultSet.getString(DBColumnsNames.USER_PHONE);
-            String password = usersResultSet.getString(DBColumnsNames.USER_PASSWORD);
-            Role role = getRoleById(usersResultSet.getInt(DBColumnsNames.USER_ROLE_ID));
+            if (resultSet.next()) {
+                String name = resultSet.getString(DBColumnsNames.USER_NAME);
+                String email = resultSet.getString(DBColumnsNames.USER_EMAIL);
+                String phone = resultSet.getString(DBColumnsNames.USER_PHONE);
+                String password = resultSet.getString(DBColumnsNames.USER_PASSWORD);
+                Role role = getRoleById(resultSet.getInt(DBColumnsNames.USER_ROLE_ID));
 
-            return new User(id, name, phone, email, password, role);
+                return new User(id, name, phone, email, password, role);
+            } else {
+                return null;
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
             ConnectionPool.getInstance().releaseConnection(connection);
         }
     }
+
+    public User getUserByEmail(String email) {
+        String query = "select * from users where email = ?";
+        Connection connection = ConnectionPool.getInstance().getConnection();
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, email);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+
+                int id = resultSet.getInt(DBColumnsNames.USER_ID);
+                String name = resultSet.getString(DBColumnsNames.USER_NAME);
+                String phone = resultSet.getString(DBColumnsNames.USER_PHONE);
+                String password = resultSet.getString(DBColumnsNames.USER_PASSWORD);
+                Role role = getRoleById(resultSet.getInt(DBColumnsNames.USER_ROLE_ID));
+
+                return new User(id, name, phone, email, password, role);
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            ConnectionPool.getInstance().releaseConnection(connection);
+        }
+    }
+
 
     public boolean removeUser(User user) {
         Connection connection = ConnectionPool.getInstance().getConnection();
@@ -157,4 +189,6 @@ public class UserDao {
         }
         return result;
     }
+
+
 }

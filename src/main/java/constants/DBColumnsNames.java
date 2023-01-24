@@ -8,9 +8,6 @@ public class DBColumnsNames {
     public static final String ORDER_STATUS_ID = "id_status";
 
 
-    public static final String ROLE_ID = "id_role";
-    public static final String ROLE_NAME = "name";
-
     public static final String USER_ID = "id_user";
     public static final String USER_NAME = "name";
     public static final String USER_EMAIL = "email";

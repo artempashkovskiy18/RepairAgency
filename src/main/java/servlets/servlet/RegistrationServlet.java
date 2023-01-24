@@ -9,9 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-//TODO at first comes mapping after that validation after that adding to cookies
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
     @Override
@@ -24,19 +22,22 @@ public class RegistrationServlet extends HttpServlet {
         String rememberMe = req.getParameter("remember-me");
         String phone = req.getParameter("phone");
 
-        Cookie emailCookie = new Cookie("email", email);
 
-
-        if (service.checkIfUserExists(email)) {
+        User user = new User(name, phone, email, password, Role.USER);
+        if (!service.checkIfUserExists(user) || service.validateUser(user)) {
             resp.sendRedirect("/error.jsp");
-        } else if (rememberMe == null) {
-            emailCookie.setMaxAge(-1);
-            resp.addCookie(emailCookie);
-        } else {
-            emailCookie.setMaxAge(OtherConstants.COOKIES_SAVING_TIME);
-            resp.addCookie(emailCookie);
         }
 
-        service.addUser(new User(name, phone, email, password, Role.USER));
+
+        Cookie emailCookie = new Cookie("email", email);
+        resp.addCookie(emailCookie);
+
+        if (rememberMe == null) {
+            emailCookie.setMaxAge(-1);
+        } else {
+            emailCookie.setMaxAge(OtherConstants.COOKIES_SAVING_TIME);
+        }
+
+        service.addUser(user);
     }
 }
