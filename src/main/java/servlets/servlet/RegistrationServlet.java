@@ -4,6 +4,7 @@ import constants.OtherConstants;
 import constants.Role;
 import models.User;
 import service.UserService;
+import servlets.CommonServletMethods;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +25,7 @@ public class RegistrationServlet extends HttpServlet {
 
 
         User user = new User(name, phone, email, password, Role.USER);
-        if (!service.checkIfUserExists(user) && service.checkIfUserValid(user)) {
+        if (service.getUserByEmail(email) == null && service.checkIfUserValid(user)) {
             Cookie emailCookie = new Cookie("email", email);
             resp.addCookie(emailCookie);
 
@@ -37,7 +38,7 @@ public class RegistrationServlet extends HttpServlet {
             service.addUser(user);
             resp.sendRedirect(req.getContextPath()+"/index.jsp");
         }else {
-            resp.sendRedirect(req.getContextPath()+"/error.jsp");
+            CommonServletMethods.forwardToErrorPage(req, resp, "you are already registered or entered data is invalid");
         }
     }
 }

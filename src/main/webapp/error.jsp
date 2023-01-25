@@ -4,6 +4,6 @@
     <title>Error</title>
 </head>
 <body>
-<p>Error</p>
+<p>An error occurred: ${errorMessage} </p>
 </body>
 </html>

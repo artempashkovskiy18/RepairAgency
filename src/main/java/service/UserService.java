@@ -23,11 +23,6 @@ public class UserService {
         return userDao.getUserByEmail(email);
     }
 
-    public boolean checkIfUserExists(User user){
-        boolean b = getUserByEmail(user.getEmail()) != null;
-        return b;
-    }
-
     public boolean removeUser(User user){
         return userDao.removeUser(user);
     }
@@ -40,11 +35,10 @@ public class UserService {
         return userDao.updateUser(user);
     }
 
-    //TODO wrong regex
     public boolean checkIfUserValid(User user){
-        boolean em = user.getEmail().matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@" +
-                "[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$");
+        boolean em = user.getEmail().matches("^[a-zA-Z0-9_!#$%&’*+=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
         boolean ph = user.getPhone().matches("^(\\\\+\\\\d{1,3}( )?)?((\\\\(\\\\d{3}\\\\))|\\\\d{3})[- .]?\\\\d{3}[- .]?\\\\d{4}$");
-        return em && ph;
+        boolean ph1 = user.getPhone().matches("^(\\+38)?\\d{10}$");
+        return em && ph1;
     }
 }
