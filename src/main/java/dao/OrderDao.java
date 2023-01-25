@@ -27,7 +27,7 @@ public class OrderDao {
 
         String selectOrders = "select * from orders";
 
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         try (Statement statement = connection.createStatement();
              ResultSet ordersResultSet = statement.executeQuery(selectOrders)) {
@@ -44,7 +44,11 @@ public class OrderDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return result;
@@ -53,7 +57,7 @@ public class OrderDao {
     public Order getOrderById(int id) {
         Order result;
 
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         String selectOrders = "select * from orders where id_order = ?";
 
@@ -73,14 +77,18 @@ public class OrderDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return result;
     }
 
     public boolean addOrder(Order order) {
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         String query = "insert into orders(price, id_user, description, id_status) values(?, ?, ?, ?)";
 
@@ -94,12 +102,16 @@ public class OrderDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     public boolean updateOrder(Order order) {
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         String query = "update orders set price = ?, id_user = ?, description = ?, id_status = ? where id_order = ?";
         try (PreparedStatement updateStatement = connection.prepareStatement(query)) {
@@ -113,7 +125,11 @@ public class OrderDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 

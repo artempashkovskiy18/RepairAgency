@@ -12,7 +12,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String email = req.getParameter("email");
+        String email = req.getParameter("sign-in-email");
         String password = req.getParameter("password");
         String rememberMe = req.getParameter("remember-me");
 

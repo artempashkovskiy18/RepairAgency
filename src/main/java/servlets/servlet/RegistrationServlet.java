@@ -24,20 +24,20 @@ public class RegistrationServlet extends HttpServlet {
 
 
         User user = new User(name, phone, email, password, Role.USER);
-        if (!service.checkIfUserExists(user) || service.validateUser(user)) {
-            resp.sendRedirect("/error.jsp");
+        if (!service.checkIfUserExists(user) && service.checkIfUserValid(user)) {
+            Cookie emailCookie = new Cookie("email", email);
+            resp.addCookie(emailCookie);
+
+            if (rememberMe == null) {
+                emailCookie.setMaxAge(-1);
+            } else {
+                emailCookie.setMaxAge(OtherConstants.COOKIES_SAVING_TIME);
+            }
+
+            service.addUser(user);
+            resp.sendRedirect(req.getContextPath()+"/index.jsp");
+        }else {
+            resp.sendRedirect(req.getContextPath()+"/error.jsp");
         }
-
-
-        Cookie emailCookie = new Cookie("email", email);
-        resp.addCookie(emailCookie);
-
-        if (rememberMe == null) {
-            emailCookie.setMaxAge(-1);
-        } else {
-            emailCookie.setMaxAge(OtherConstants.COOKIES_SAVING_TIME);
-        }
-
-        service.addUser(user);
     }
 }

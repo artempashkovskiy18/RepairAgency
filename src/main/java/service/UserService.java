@@ -24,7 +24,8 @@ public class UserService {
     }
 
     public boolean checkIfUserExists(User user){
-        return getUserByEmail(user.getEmail()) != null;
+        boolean b = getUserByEmail(user.getEmail()) != null;
+        return b;
     }
 
     public boolean removeUser(User user){
@@ -39,9 +40,11 @@ public class UserService {
         return userDao.updateUser(user);
     }
 
-    public boolean validateUser(User user){
-        return user.getEmail().matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@" +
-                "[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$") &&
-                user.getPhone().matches("^(\\\\+\\\\d{1,3}( )?)?((\\\\(\\\\d{3}\\\\))|\\\\d{3})[- .]?\\\\d{3}[- .]?\\\\d{4}$");
+    //TODO wrong regex
+    public boolean checkIfUserValid(User user){
+        boolean em = user.getEmail().matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@" +
+                "[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$");
+        boolean ph = user.getPhone().matches("^(\\\\+\\\\d{1,3}( )?)?((\\\\(\\\\d{3}\\\\))|\\\\d{3})[- .]?\\\\d{3}[- .]?\\\\d{4}$");
+        return em && ph;
     }
 }

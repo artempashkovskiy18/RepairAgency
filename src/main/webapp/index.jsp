@@ -51,12 +51,12 @@
             <form action="login" method="post" id="sign-in-form">
                 <div class="form-group">
                     <label>Your email</label>
-                    <input name="email" class="form-control" placeholder="Email" type="email">
+                    <input name="email" class="form-control" id="sign-in-email" placeholder="Email" type="email" required>
                 </div> <!-- form-group// -->
                 <div class="form-group">
                     <a class="float-right" href="#">Forgot your password?</a>
                     <label>Your password</label>
-                    <input name="password" class="form-control" placeholder="******" type="password">
+                    <input name="password" class="form-control" placeholder="******" type="password" required>
                 </div> <!-- form-group// -->
                 <div class="form-group">
                     <div class="checkbox">
@@ -81,7 +81,7 @@
             <form action="registration" method="post" id="sign-up-form">
                 <div class="form-group">
                     <label>Your name</label>
-                    <input name="name" class="form-control" placeholder="Name">
+                    <input name="name" class="form-control" placeholder="Name" required>
                 </div>
                 <div class="form-group">
                     <label>Your phone</label>
@@ -89,15 +89,15 @@
                 </div>
                 <div class="form-group">
                     <label>Your email</label>
-                    <input name="email" class="form-control" placeholder="Email" type="email">
+                    <input name="email" class="form-control" id="sign-up-email" placeholder="Email" type="email" required>
                 </div> <!-- form-group// -->
                 <div class="form-group">
                     <label>Your password</label>
-                    <input name="password" class="form-control" placeholder="******" type="password">
+                    <input name="password" class="form-control" id="sign-up-password" placeholder="******" type="password" required>
                 </div>
                 <div class="form-group">
                     <label>Repeat your password</label>
-                    <input name="password-repeat" class="form-control" placeholder="******" type="password">
+                    <input name="password-repeat" class="form-control" placeholder="******" type="password" required>
                 </div><!-- form-group// -->
                 <div class="form-group">
                     <div class="checkbox">

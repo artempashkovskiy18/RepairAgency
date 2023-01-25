@@ -9,17 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801d70c1-1a65-42a9-976e-e013ce1ffcc7" name="Changes" comment="added FrontController and Commands but they do not work">
+    <list default="true" id="801d70c1-1a65-42a9-976e-e013ce1ffcc7" name="Changes" comment="backend for registration is ready">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/DBColumnsNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/DBColumnsNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/servlet/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/RegistrationServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/error.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/ConnectionPoolTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +71,15 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.4229885&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -87,7 +94,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoTest.getUserByEmail">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.84">
     <configuration name="OrderDaoTest.getOrderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepairAgency" />
       <extension name="coverage">
@@ -169,6 +176,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 8.5.84" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.84" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/RepairAgency_war" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="RepairAgency:war">
@@ -265,10 +273,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDaoTest.getAllUsers" />
         <item itemvalue="JUnit.UserDaoTest.getUserByEmail" />
         <item itemvalue="JUnit.UserDaoTest.getUserById" />
         <item itemvalue="JUnit.UserDaoTest.updateUser" />
-        <item itemvalue="JUnit.UserDaoTest.getAllUsers" />
         <item itemvalue="JUnit.OrderDaoTest.getOrderById" />
       </list>
     </recent_temporary>
@@ -290,6 +298,7 @@
       <workItem from="1674262780821" duration="227000" />
       <workItem from="1674329240296" duration="2693000" />
       <workItem from="1674508656379" duration="5642000" />
+      <workItem from="1674656819626" duration="1444000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1673971140269</created>
@@ -347,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674508125013</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="backend for registration is ready">
+      <created>1674598962041</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674598962041</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,20 +390,21 @@
     <MESSAGE value="done all TODOs in UserDao" />
     <MESSAGE value="added user and order services" />
     <MESSAGE value="added FrontController and Commands but they do not work" />
-    <option name="LAST_COMMIT_MESSAGE" value="added FrontController and Commands but they do not work" />
+    <MESSAGE value="backend for registration is ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend for registration is ready" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/service/UserService.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/service/UserService.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

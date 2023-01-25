@@ -28,7 +28,7 @@ public class UserDao {
 
 
         String selectUsers = "select * from users";
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         try (Statement statement = connection.createStatement();
              ResultSet usersResultSet = statement.executeQuery(selectUsers)) {
@@ -51,7 +51,11 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return result;
@@ -59,7 +63,7 @@ public class UserDao {
 
     public User getUserById(int id) {
         String query = "select * from users where id_user = ?";
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
@@ -80,13 +84,17 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     public User getUserByEmail(String email) {
         String query = "select * from users where email = ?";
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, email);
@@ -108,13 +116,17 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
 
     public boolean removeUser(User user) {
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         String query = "delete from users where " + DBColumnsNames.USER_ID + " = ?";
 
@@ -124,12 +136,16 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     public boolean addUser(User user) {
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         String query = "insert into users(" + DBColumnsNames.USER_ID + ", "
                 + DBColumnsNames.USER_NAME + ", "
@@ -148,12 +164,16 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     public boolean updateUser(User user) {
-        Connection connection = ConnectionPool.getInstance().getConnection();
+        Connection connection = ConnectionPool.getConnection();
 
         String query = "update users " +
                 "set " + DBColumnsNames.USER_NAME + " = ?, "
@@ -174,7 +194,11 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionPool.getInstance().releaseConnection(connection);
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
