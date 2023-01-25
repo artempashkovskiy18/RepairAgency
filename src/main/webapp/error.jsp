@@ -4,6 +4,6 @@
     <title>Error</title>
 </head>
 <body>
-<p>An error occurred: ${errorMessage} </p>
+<p>An error occurred: ${requestScope.errorMessage} </p>
 </body>
 </html>

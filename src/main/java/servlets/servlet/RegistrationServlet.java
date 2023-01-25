@@ -38,6 +38,7 @@ public class RegistrationServlet extends HttpServlet {
             service.addUser(user);
             resp.sendRedirect(req.getContextPath()+"/index.jsp");
         }else {
+            System.out.println("Test");
             CommonServletMethods.forwardToErrorPage(req, resp, "you are already registered or entered data is invalid");
         }
     }

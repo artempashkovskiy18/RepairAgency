@@ -19,7 +19,7 @@ public class ConnectionPool {
     static {
         ds.setUrl("jdbc:mysql://localhost:3306/repair_agency");
         ds.setUsername("root");
-        ds.setPassword("ргн4");
+        ds.setPassword("Qwertyu2_");
         ds.setMinIdle(5);
         ds.setMaxIdle(10);
         ds.setMaxOpenPreparedStatements(100);

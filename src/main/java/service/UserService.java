@@ -37,7 +37,6 @@ public class UserService {
 
     public boolean checkIfUserValid(User user){
         boolean em = user.getEmail().matches("^[a-zA-Z0-9_!#$%&’*+=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
-        boolean ph = user.getPhone().matches("^(\\\\+\\\\d{1,3}( )?)?((\\\\(\\\\d{3}\\\\))|\\\\d{3})[- .]?\\\\d{3}[- .]?\\\\d{4}$");
         boolean ph1 = user.getPhone().matches("^(\\+38)?\\d{10}$");
         return em && ph1;
     }
