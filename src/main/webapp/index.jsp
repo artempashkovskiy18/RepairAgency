@@ -33,7 +33,7 @@
         </li>
         <li><a href="">Contacts</a></li>
         <li><a href="">About us</a></li>
-        <li><a href="">Get orders</a></li>
+        <li><a href="orders.jsp">Get orders</a></li>
     </ul>
     <div>
         <a class="float-right btn btn-outline-primary" name="sign-in-button">Sign in</a>
