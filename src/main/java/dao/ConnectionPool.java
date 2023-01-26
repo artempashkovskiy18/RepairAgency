@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class ConnectionPool {
-    private static BasicDataSource ds = new BasicDataSource();
+    private static BasicDataSource dataSource = new BasicDataSource();
 
     static {
         try {
@@ -17,17 +17,17 @@ public class ConnectionPool {
     }
 
     static {
-        ds.setUrl("jdbc:mysql://localhost:3306/repair_agency");
-        ds.setUsername("root");
-        ds.setPassword("ргн4");
-        ds.setMinIdle(5);
-        ds.setMaxIdle(10);
-        ds.setMaxOpenPreparedStatements(100);
+        dataSource.setUrl("jdbc:mysql://localhost:3306/repair_agency");
+        dataSource.setUsername("root");
+        dataSource.setPassword("Qwertyu2_");
+        dataSource.setMinIdle(5);
+        dataSource.setMaxIdle(10);
+        dataSource.setMaxOpenPreparedStatements(100);
     }
 
     public static Connection getConnection() {
         try {
-            return ds.getConnection();
+            return dataSource.getConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

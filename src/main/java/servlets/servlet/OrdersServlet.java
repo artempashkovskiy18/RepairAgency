@@ -23,8 +23,10 @@ public class OrdersServlet extends HttpServlet {
         OrderService service = new OrderService();
 
         if(cookies != null){
+
             User user = CommonServletMethods.getUserFromCookies(cookies);
             if(user != null){
+
                 if(user.getRole() == Role.MANAGER || user.getRole() == Role.CRAFTSMAN){
                     List<Order> orders = service.getAllOrders();
                     req.setAttribute("orders", orders);
@@ -32,9 +34,11 @@ public class OrdersServlet extends HttpServlet {
                 }else{
                     CommonServletMethods.forwardToErrorPage(req, resp, "you have no access to this page");
                 }
+
             }else {
                 CommonServletMethods.forwardToErrorPage(req, resp, "no such user. Try to log in");
             }
+
         }else{
             CommonServletMethods.forwardToErrorPage(req, resp, "you are not logged in");
         }

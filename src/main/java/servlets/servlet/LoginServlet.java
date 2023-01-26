@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserService service = new UserService();
 
-        String email = req.getParameter("sign-in-email");
+        String email = req.getParameter("email");
         String password = req.getParameter("password");
         String rememberMe = req.getParameter("remember-me");
 
