@@ -147,12 +147,12 @@ public class UserDao {
     public boolean addUser(User user) {
         Connection connection = ConnectionPool.getConnection();
 
-        String query = "insert into users(" + DBColumnsNames.USER_ID + ", "
+        String query = "insert into users("
                 + DBColumnsNames.USER_NAME + ", "
                 + DBColumnsNames.USER_EMAIL + ", "
                 + DBColumnsNames.USER_PASSWORD + ", "
                 + DBColumnsNames.USER_ROLE_ID + ", "
-                + DBColumnsNames.USER_PHONE + ") values(default, ?, ?, ?, ?, ?)";
+                + DBColumnsNames.USER_PHONE + ") values(?, ?, ?, ?, ?)";
         try (PreparedStatement insertStatement = connection.prepareStatement(query)) {
             insertStatement.setString(1, user.getName());
             insertStatement.setString(2, user.getEmail());

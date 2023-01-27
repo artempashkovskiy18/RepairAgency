@@ -38,8 +38,10 @@ public class OrderDao {
                 User user = UserDao.getInstance().getUserById(ordersResultSet.getInt(DBColumnsNames.ORDER_USER_ID));
                 String car = ordersResultSet.getString(DBColumnsNames.ORDER_DESCRIPTION);
                 OrderStatus status = getStatusById(ordersResultSet.getInt(DBColumnsNames.ORDER_STATUS_ID));
+                Date date = ordersResultSet.getDate(DBColumnsNames.ORDER_DATE);
+                Time time = ordersResultSet.getTime(DBColumnsNames.ORDER_TIME);
 
-                result.add(new Order(id, price, car, user, status));
+                result.add(new Order(id, price, car, user, status, date, time));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -71,9 +73,11 @@ public class OrderDao {
             User user = UserDao.getInstance().getUserById(ordersResultSet.getInt(DBColumnsNames.ORDER_USER_ID));
             String car = ordersResultSet.getString(DBColumnsNames.ORDER_DESCRIPTION);
             OrderStatus status = getStatusById(ordersResultSet.getInt(DBColumnsNames.ORDER_STATUS_ID));
+            Date date = ordersResultSet.getDate(DBColumnsNames.ORDER_DATE);
+            Time time = ordersResultSet.getTime(DBColumnsNames.ORDER_TIME);
 
 
-            result = new Order(id, price, car, user, status);
+            result = new Order(id, price, car, user, status, date, time);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
@@ -90,13 +94,15 @@ public class OrderDao {
     public boolean addOrder(Order order) {
         Connection connection = ConnectionPool.getConnection();
 
-        String query = "insert into orders(price, id_user, description, id_status) values(?, ?, ?, ?)";
+        String query = "insert into orders(price, id_user, description, id_status, date, time) values(?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement insertStatement = connection.prepareStatement(query)) {
             insertStatement.setDouble(1, order.getPrice());
             insertStatement.setInt(2, order.getUser().getId());
             insertStatement.setString(3, order.getDescription());
             insertStatement.setInt(4, order.getStatus().getId());
+            insertStatement.setDate(5, order.getDate());
+            insertStatement.setTime(6, order.getTime());
 
             return insertStatement.executeUpdate() != 0;
         } catch (SQLException e) {

@@ -6,6 +6,9 @@ public class DBColumnsNames {
     public static final String ORDER_USER_ID = "id_user";
     public static final String ORDER_DESCRIPTION = "description";
     public static final String ORDER_STATUS_ID = "id_status";
+    public static final String ORDER_DATE = "date";
+    public static final String ORDER_TIME = "time";
+
 
 
     public static final String USER_ID = "id_user";

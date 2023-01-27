@@ -4,6 +4,8 @@ import constants.OrderStatus;
 import models.Order;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,26 +16,49 @@ class OrderDaoTest {
     @Test
     void getAllOrders() {
         List<Order> ordersExpected = new ArrayList<>();
-        ordersExpected.add(new Order(3, 1300, "vaz2109", UserDao.getInstance().getUserById(1), OrderStatus.PENDING_PAYMENT));
+        ordersExpected.add(new Order(3,
+                1300,
+                "vaz2109",
+                UserDao.getInstance().getUserById(1),
+                OrderStatus.PENDING_PAYMENT,
+                new Date(2022, 12, 10),
+                new Time(13,0,0)));
         List<Order> ordersActual = OrderDao.getInstance().getAllOrders();
         assertEquals(ordersExpected, ordersActual);
     }
 
     @Test
     void addOrder() {
-        Order order = new Order(1300, "vaz2109", UserDao.getInstance().getUserById(1), OrderStatus.PENDING_PAYMENT);
+        Order order = new Order(1300,
+                "vaz2109",
+                UserDao.getInstance().getUserById(1),
+                OrderStatus.PENDING_PAYMENT,
+                new Date(2022, 12, 10),
+                new Time(13,0,0));
         assertTrue(OrderDao.getInstance().addOrder(order));
     }
 
     @Test
     void updateOrder() {
-        Order order = new Order(3, 1300, "vaz2110", UserDao.getInstance().getUserById(1), OrderStatus.PENDING_PAYMENT);
+        Order order = new Order(3,
+                1300,
+                "vaz2110",
+                UserDao.getInstance().getUserById(1),
+                OrderStatus.PENDING_PAYMENT,
+                new Date(2022, 12, 10),
+                new Time(13,0,0));
         assertTrue(OrderDao.getInstance().updateOrder(order));
     }
 
     @Test
     void getOrderById() {
-        Order order = new Order(3, 1300, "vaz2110", UserDao.getInstance().getUserById(1), OrderStatus.PENDING_PAYMENT);
+        Order order = new Order(3,
+                1300,
+                "vaz2110",
+                UserDao.getInstance().getUserById(1),
+                OrderStatus.PENDING_PAYMENT,
+                new Date(2022, 12, 10),
+                new Time(13,0,0));
         assertEquals(OrderDao.getInstance().getOrderById(3), order);
     }
 }

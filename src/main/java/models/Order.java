@@ -2,18 +2,21 @@ package models;
 
 import constants.OrderStatus;
 
+import java.sql.Time;
+import java.sql.Date;
 import java.util.Objects;
 
+//TODO add to sql date and time of order
 public class Order{
     private int id;
     private OrderStatus status;
     private double price;
-
-
+    private Date date;
+    private Time time;
     private final User user;
     private final String description;
 
-    public Order(double price, String description, User user, OrderStatus status) {
+    public Order(double price, String description, User user, OrderStatus status, Date date, Time time) {
         this.status = status;
         this.price = price;
         this.user = user;
@@ -21,12 +24,14 @@ public class Order{
         this.id = -1;
     }
 
-    public Order(int id, double price, String description, User user, OrderStatus status) {
+    public Order(int id, double price, String description, User user, OrderStatus status, Date date, Time time) {
         this.status = status;
         this.price = price;
         this.user = user;
         this.description = description;
         this.id = id;
+        this.date = date;
+        this.time = time;
     }
 
     public void changeStatus(OrderStatus newStatus) {
@@ -52,6 +57,14 @@ public class Order{
 
     public String getDescription() {
         return description;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Time getTime() {
+        return time;
     }
 
     @Override

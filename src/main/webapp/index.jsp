@@ -28,7 +28,7 @@
         <li><a href="index.jsp" class="down">Main</a>
             <ul class="submenu">
                 <li><a href="">Prices</a></li>
-                <li><a href="">Create order</a></li>
+                <li><a href="createOrder.jsp">Create order</a></li>
             </ul>
         </li>
         <li><a href="">Contacts</a></li>
