@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `repair_agency`.`orders` (
   `id_order` INT NOT NULL AUTO_INCREMENT,
   `price` DOUBLE NOT NULL,
   `id_user` INT NOT NULL,
-  `car` VARCHAR(255) NOT NULL,
+  `description` VARCHAR(255) NOT NULL,
   `id_status` INT NOT NULL,
   `date` DATE NOT NULL,
   `time` TIME NOT NULL,
@@ -100,5 +100,6 @@ insert into statuses(name) values("paid");
 insert into statuses(name) values("in_progress");
 insert into statuses(name) values("complete");
 insert into statuses(name) values("canceled");
+insert into statuses(name) values("waiting");
 
 insert into users(name, email, password, id_role, phone) values ("Artem", "artempashkovskiy18@gmail.com", "123", 2, "+380964568447")

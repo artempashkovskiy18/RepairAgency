@@ -22,25 +22,20 @@ public class OrdersServlet extends HttpServlet {
         Cookie[] cookies = req.getCookies();
         OrderService service = new OrderService();
 
-        if(cookies != null){
-
-            User user = CommonServletMethods.getUserFromCookies(cookies);
-            if(user != null){
-
-                if(user.getRole() == Role.MANAGER || user.getRole() == Role.CRAFTSMAN){
-                    List<Order> orders = service.getAllOrders();
-                    req.setAttribute("orders", orders);
-                    getServletContext().getRequestDispatcher("/orders.jsp").forward(req, resp);
-                }else{
-                    CommonServletMethods.forwardToErrorPage(req, resp, "you have no access to this page");
-                }
-
-            }else {
-                CommonServletMethods.forwardToErrorPage(req, resp, "no such user. Try to log in");
-            }
-
-        }else{
+        if(cookies == null){
             CommonServletMethods.forwardToErrorPage(req, resp, "you are not logged in");
+        }else{
+            User user = CommonServletMethods.getUserFromCookies(cookies);
+            if(user == null){
+                CommonServletMethods.forwardToErrorPage(req, resp, "no such user. Try to log in");
+
+            }else if(user.getRole() != Role.MANAGER && user.getRole() != Role.CRAFTSMAN){
+                CommonServletMethods.forwardToErrorPage(req, resp, "you have no access to this page");
+            }else {
+                List<Order> orders = service.getAllOrders();
+                req.setAttribute("orders", orders);
+                getServletContext().getRequestDispatcher("/orders.jsp").forward(req, resp);
+            }
         }
     }
 }

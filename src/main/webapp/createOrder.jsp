@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link href="CSS/createOrder.css" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -11,23 +11,37 @@
 <%
     pageContext.setAttribute("currentDate", LocalDate.now());
     pageContext.setAttribute("lastDate", LocalDate.now().plusDays(7));
+    pageContext.setAttribute("minTime", "09:00");
+    pageContext.setAttribute("maxTime", "18:00");
 %>
 
 <div class="center-block create-order-container">
     <div class="row" style="margin-top: 5%">
 
-        <form action="">
+        <form action="createOrder">
             <div class="form-group">
                 <label>Description</label>
                 <input name="description" class="form-control" placeholder="Description" type="text" required>
             </div>
             <div class="form-group">
                 <label>Order date</label>
-                <input name="date" class="form-control" placeholder="Date" type="date" required>
+                <input name="date"
+                       class="form-control"
+                       placeholder="Date"
+                       type="date"
+                       min=${pageScope.currentDate}
+                       max=${pageScope.lastDate}
+                       required>
             </div>
             <div class="form-group">
                 <label>Order date</label>
-                <input name="time" class="form-control" placeholder="Time" type="time" required>
+                <input name="time"
+                       class="form-control"
+                       placeholder="Time"
+                       type="time"
+                       min=${pageScope.minTime}
+                       max=${pageScope.maxTime}
+                       required>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block" id="submit-sign-in">Sign in</button>

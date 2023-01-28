@@ -149,6 +149,8 @@ public class OrderDao {
             result = OrderStatus.COMPLETE;
         }else if (id == OrderStatus.CANCELED.getId()){
             result = OrderStatus.CANCELED;
+        } else if (id == OrderStatus.WAITING.getId()) {
+            result = OrderStatus.WAITING;
         }
         return result;
     }
