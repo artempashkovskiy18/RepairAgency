@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Create order</title>
     <link href="CSS/style.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -27,6 +27,7 @@
                 <label>Order date</label>
                 <input name="date"
                        class="form-control"
+                       id="date"
                        placeholder="Date"
                        type="date"
                        min=${pageScope.currentDate}
@@ -34,9 +35,10 @@
                        required>
             </div>
             <div class="form-group">
-                <label>Order date</label>
+                <label>Order time</label>
                 <input name="time"
                        class="form-control"
+                       id="time"
                        placeholder="Time"
                        type="time"
                        min=${pageScope.minTime}
@@ -44,8 +46,8 @@
                        required>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block" id="submit-sign-in">Sign in</button>
-            </div> <!-- form-group// -->
+                <button type="submit" class="btn btn-primary btn-block" id="create-order-submit">Create order</button>
+            </div>
         </form>
 
     </div>

@@ -15,6 +15,8 @@
             <th>Status</th>
             <th>Price</th>
             <th>Description</th>
+            <th>Date</th>
+            <th>Time</th>
         </tr>
         <c:forEach var="order" items="${requestScope.orders}">
             <tr>
@@ -24,6 +26,8 @@
                 <td><c:out value="${order.status}"/> </td>
                 <td><c:out value="${order.price}"/></td>
                 <td><c:out value="${order.description}"/></td>
+                <td><c:out value="${order.date}"/></td>
+                <td><c:out value="${order.time}"/></td>
             </tr>
         </c:forEach>
     </table>

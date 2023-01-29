@@ -22,6 +22,8 @@ public class Order{
         this.user = user;
         this.description = description;
         this.id = -1;
+        this.date = date;
+        this.time = time;
     }
 
     public Order(int id, double price, String description, User user, OrderStatus status, Date date, Time time) {
