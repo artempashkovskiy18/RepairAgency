@@ -1,11 +1,21 @@
 <%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="navAndSignTags" prefix="nst" %>
 <html>
 <head>
     <title>Create order</title>
     <link href="CSS/style.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <script src="JS/main.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
 </head>
 <body>
 <%
@@ -15,8 +25,10 @@
     pageContext.setAttribute("maxTime", "18:00");
 %>
 
+<nst:navSignTag/>
+
 <div class="center-block create-order-container">
-    <div class="row" style="margin-top: 5%">
+    <div style="margin-top: 5%">
 
         <form action="createOrder">
             <div class="form-group">

@@ -9,4 +9,9 @@
          id="Your_WebApp_ID"
          version="2.5">
   <display-name>Archetype Created Web Application</display-name>
+
+  <taglib>
+    <taglib-uri>navAndSignTags</taglib-uri>
+    <taglib-location>/WEB-INF/navAndSign.tld</taglib-location>
+  </taglib>
 </web-app>
