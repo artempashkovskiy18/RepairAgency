@@ -36,10 +36,14 @@ public class Order{
         this.time = time;
     }
 
-    public void changeStatus(OrderStatus newStatus) {
-        status = newStatus;
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public int getId() {
         return id;

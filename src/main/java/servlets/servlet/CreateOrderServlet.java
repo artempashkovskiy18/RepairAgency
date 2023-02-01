@@ -32,23 +32,17 @@ public class CreateOrderServlet extends HttpServlet {
 
         Cookie[] cookies = req.getCookies();
 
-        if(date.after(Date.valueOf(LocalDate.now().plusDays(7))) ||
-                date.before(Date.valueOf(LocalDate.now()))){
+        if (date.after(Date.valueOf(LocalDate.now().plusDays(7))) ||
+                date.before(Date.valueOf(LocalDate.now()))) {
             CommonServletMethods.forwardToErrorPage(req, resp, "you entered wrong date");
-        }else if(time.before(Time.valueOf("09:00:00")) ||
-                time.after(Time.valueOf("18:00:00"))){
+        } else if (time.before(Time.valueOf("09:00:00")) ||
+                time.after(Time.valueOf("18:00:00"))) {
             CommonServletMethods.forwardToErrorPage(req, resp, "you entered wrong time");
-        }else if(cookies == null){
-            CommonServletMethods.forwardToErrorPage(req, resp, "you are not logged in");
-        }else{
+        } else {
             User user = CommonServletMethods.getUserFromCookies(cookies);
-            if(user == null){
-                CommonServletMethods.forwardToErrorPage(req, resp, "no such user. Try to log in");
-            }else {
-                Order order = new Order(0, description, user, OrderStatus.WAITING, date, time);
-                service.addOrder(order);
-                getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
-            }
+            Order order = new Order(0, description, user, OrderStatus.WAITING, date, time);
+            service.addOrder(order);
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
         }
     }
 }

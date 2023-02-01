@@ -2,6 +2,7 @@ package servlets;
 
 import constants.OtherConstants;
 import models.User;
+import service.OrderService;
 import service.UserService;
 
 import javax.servlet.ServletException;
@@ -25,5 +26,10 @@ public class CommonServletMethods {
             }
         }
         return result;
+    }
+
+    public static void forwardToOrders(HttpServletRequest request, HttpServletResponse response, OrderService service) throws ServletException, IOException {
+        request.setAttribute("orders", service.getAllOrders());
+        request.getServletContext().getRequestDispatcher("/orders.jsp").forward(request, response);
     }
 }

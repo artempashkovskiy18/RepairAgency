@@ -27,17 +27,24 @@
             <th>Description</th>
             <th>Date</th>
             <th>Time</th>
+            <th>Change</th>
         </tr>
         <c:forEach var="order" items="${requestScope.orders}">
             <tr>
                 <td><c:out value="${order.user.name}"/></td>
                 <td><c:out value="${order.user.email}"/></td>
                 <td><c:out value="${order.user.phone}"/></td>
-                <td><c:out value="${order.status}"/> </td>
+                <td><c:out value="${order.status}"/></td>
                 <td><c:out value="${order.price}"/></td>
                 <td><c:out value="${order.description}"/></td>
                 <td><c:out value="${order.date}"/></td>
                 <td><c:out value="${order.time}"/></td>
+                <td>
+                    <form action="change">
+                        <input type="hidden" name="id" value="${order.id}">
+                        <button type="submit" class="btn btn-outline-primary">Change</button>
+                    </form>
+                </td>
             </tr>
         </c:forEach>
     </table>
