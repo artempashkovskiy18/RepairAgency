@@ -6,15 +6,16 @@ import java.sql.Time;
 import java.sql.Date;
 import java.util.Objects;
 
-//TODO add to sql date and time of order
+
 public class Order{
-    private int id;
+    private final int id;
     private OrderStatus status;
     private double price;
-    private Date date;
-    private Time time;
+    private final Date date;
+    private final Time time;
     private final User user;
     private final String description;
+    private User craftsman = null;
 
     public Order(double price, String description, User user, OrderStatus status, Date date, Time time) {
         this.status = status;
@@ -26,7 +27,7 @@ public class Order{
         this.time = time;
     }
 
-    public Order(int id, double price, String description, User user, OrderStatus status, Date date, Time time) {
+    public Order(int id, double price, String description, User user, OrderStatus status, Date date, Time time, User craftsman) {
         this.status = status;
         this.price = price;
         this.user = user;
@@ -34,6 +35,7 @@ public class Order{
         this.id = id;
         this.date = date;
         this.time = time;
+        this.craftsman = craftsman;
     }
 
 
@@ -43,6 +45,10 @@ public class Order{
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public void setCraftsman(User craftsman){
+        this.craftsman = craftsman;
     }
 
     public int getId() {
@@ -71,6 +77,10 @@ public class Order{
 
     public Time getTime() {
         return time;
+    }
+
+    public User getCraftsman() {
+        return craftsman;
     }
 
     @Override

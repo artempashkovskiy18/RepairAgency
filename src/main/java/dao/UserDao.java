@@ -92,6 +92,38 @@ public class UserDao {
         }
     }
 
+    public List<User> getCraftsmen() {
+        String query = "select * from users where id_role = ?";
+        Connection connection = ConnectionPool.getConnection();
+        List<User> result = new ArrayList<>();
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, Role.CRAFTSMAN.getId());
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt(DBColumnsNames.USER_ID);
+                String name = resultSet.getString(DBColumnsNames.USER_NAME);
+                String email = resultSet.getString(DBColumnsNames.USER_EMAIL);
+                String phone = resultSet.getString(DBColumnsNames.USER_PHONE);
+                String password = resultSet.getString(DBColumnsNames.USER_PASSWORD);
+
+                result.add(new User(id, name, phone, email, password, Role.CRAFTSMAN));
+            }
+            return result;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
     public User getUserByEmail(String email) {
         String query = "select * from users where email = ?";
         Connection connection = ConnectionPool.getConnection();

@@ -2,6 +2,7 @@ package service;
 
 import dao.OrderDao;
 import models.Order;
+import models.User;
 
 import java.util.List;
 
@@ -23,5 +24,9 @@ public class OrderService {
 
     public boolean updateOrder(Order order){
         return orderDao.updateOrder(order);
+    }
+
+    public List<Order> getOrdersByCraftsman(User craftsman){
+        return orderDao.getOrdersByCraftsman(craftsman);
     }
 }

@@ -8,6 +8,7 @@ public class DBColumnsNames {
     public static final String ORDER_STATUS_ID = "id_status";
     public static final String ORDER_DATE = "date";
     public static final String ORDER_TIME = "time";
+    public static final String ORDER_CRAFTSMAN_ID = "id_craftsman";
 
 
 

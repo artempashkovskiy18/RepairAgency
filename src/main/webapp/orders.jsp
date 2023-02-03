@@ -27,6 +27,7 @@
             <th>Description</th>
             <th>Date</th>
             <th>Time</th>
+            <th>Craftsman</th>
             <th>Change</th>
         </tr>
         <c:forEach var="order" items="${requestScope.orders}">
@@ -39,6 +40,10 @@
                 <td><c:out value="${order.description}"/></td>
                 <td><c:out value="${order.date}"/></td>
                 <td><c:out value="${order.time}"/></td>
+                <td>
+                    <c:out value="${order.craftsman.name}"/>
+                    <c:out value="${order.craftsman.email}"/>
+                </td>
                 <td>
                     <form action="change">
                         <input type="hidden" name="id" value="${order.id}">

@@ -16,13 +16,14 @@ class OrderDaoTest {
     @Test
     void getAllOrders() {
         List<Order> ordersExpected = new ArrayList<>();
-        ordersExpected.add(new Order(3,
+        ordersExpected.add(new Order(1,
                 1300,
                 "vaz2109",
                 UserDao.getInstance().getUserById(1),
-                OrderStatus.PENDING_PAYMENT,
+                OrderStatus.WAITING,
                 new Date(2022, 12, 10),
-                new Time(13,0,0)));
+                new Time(13,0,0),
+                UserDao.getInstance().getUserById(2)));
         List<Order> ordersActual = OrderDao.getInstance().getAllOrders();
         assertEquals(ordersExpected, ordersActual);
     }
@@ -32,7 +33,7 @@ class OrderDaoTest {
         Order order = new Order(1300,
                 "vaz2109",
                 UserDao.getInstance().getUserById(1),
-                OrderStatus.PENDING_PAYMENT,
+                OrderStatus.WAITING,
                 new Date(2022, 12, 10),
                 new Time(13,0,0));
         assertTrue(OrderDao.getInstance().addOrder(order));
@@ -46,7 +47,8 @@ class OrderDaoTest {
                 UserDao.getInstance().getUserById(1),
                 OrderStatus.PENDING_PAYMENT,
                 new Date(2022, 12, 10),
-                new Time(13,0,0));
+                new Time(13,0,0),
+                UserDao.getInstance().getUserById(2));
         assertTrue(OrderDao.getInstance().updateOrder(order));
     }
 
@@ -58,7 +60,8 @@ class OrderDaoTest {
                 UserDao.getInstance().getUserById(1),
                 OrderStatus.PENDING_PAYMENT,
                 new Date(2022, 12, 10),
-                new Time(13,0,0));
+                new Time(13,0,0),
+                UserDao.getInstance().getUserById(2));
         assertEquals(OrderDao.getInstance().getOrderById(3), order);
     }
 }

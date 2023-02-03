@@ -27,7 +27,7 @@ public class OrdersServlet extends HttpServlet {
         if (user.getRole() != Role.MANAGER && user.getRole() != Role.CRAFTSMAN) {
             CommonServletMethods.forwardToErrorPage(req, resp, "you have no access to this page");
         } else {
-            CommonServletMethods.forwardToOrders(req, resp, service);
+            CommonServletMethods.forwardToOrders(req, resp, service, user);
         }
     }
 }

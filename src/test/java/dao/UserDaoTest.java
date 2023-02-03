@@ -40,19 +40,19 @@ class UserDaoTest {
         UserDao userDao = UserDao.getInstance();
         User Artem = new User("Artem",
                 "+380964568447",
-                "artempashkovskiy18@gmail.com",
+                "artempashkovskiy19@gmail.com",
                 "123",
-                Role.MANAGER);
+                Role.CRAFTSMAN);
         assertTrue(userDao.addUser(Artem));
     }
 
     @Test
     void updateUser() {
-        User Artem = new User(1,"Artem",
+        User Artem = new User(2,"Artem",
                 "+380964568447",
-                "artempashkovskiy18@gmail.com",
+                "artempashkovskiy19@gmail.com",
                 "123",
-                Role.MANAGER);
+                Role.CRAFTSMAN);
         assertTrue(UserDao.getInstance().updateUser(Artem));
 
     }
