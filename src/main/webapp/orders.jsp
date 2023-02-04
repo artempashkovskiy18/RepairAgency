@@ -1,3 +1,4 @@
+<%@ page import="constants.OtherConstants" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="navAndSignTags" prefix="nst" %>
@@ -14,8 +15,26 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>
 <body>
-<nst:navSignTag/>
+<%
+    pageContext.setAttribute("cost", OtherConstants.SORT_OPTION_COST);
+    pageContext.setAttribute("status", OtherConstants.SORT_OPTION_STATUS);
+    pageContext.setAttribute("date", OtherConstants.SORT_OPTION_DATE);
+    pageContext.setAttribute("craftsman", OtherConstants.SORT_OPTION_CRAFTSMAN);
+%>
 
+<nst:navSignTag/>
+<div>
+    <form action="sort">
+        <label>Sort by</label>
+        <select name="sort">
+            <option value="${date}">Date</option>
+            <option value="${status}">Status</option>
+            <option value="${cost}">Cost</option>
+            <option value="${craftsman}">Craftsman</option>
+        </select>
+        <button type="submit" class="btn btn-outline-primary">Sort</button>
+    </form>
+</div>
 <div class="orders">
     <table border="1">
         <tr>

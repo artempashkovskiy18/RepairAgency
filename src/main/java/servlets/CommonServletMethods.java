@@ -12,6 +12,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 
 public class CommonServletMethods {
@@ -32,13 +33,27 @@ public class CommonServletMethods {
     }
 
     public static void forwardToOrders(HttpServletRequest request, HttpServletResponse response, OrderService service, User user) throws ServletException, IOException {
+        List<Order> orders = getOrders(service, user, null);
+        request.setAttribute("orders", orders);
+        request.getServletContext().getRequestDispatcher("/orders.jsp").forward(request, response);
+    }
+
+    public static void forwardToOrders(HttpServletRequest request, HttpServletResponse response, OrderService service, User user, Comparator<Order> comparator) throws ServletException, IOException {
+        List<Order> orders = getOrders(service, user, comparator);
+        request.setAttribute("orders", orders);
+        request.getServletContext().getRequestDispatcher("/orders.jsp").forward(request, response);
+    }
+
+    private static List<Order> getOrders(OrderService service, User user, Comparator<Order> comparator){
         List<Order> orders;
         if(user.getRole() == Role.CRAFTSMAN){
             orders = service.getOrdersByCraftsman(user);
         }else{
             orders = service.getAllOrders();
         }
-        request.setAttribute("orders", orders);
-        request.getServletContext().getRequestDispatcher("/orders.jsp").forward(request, response);
+        if(comparator != null){
+            orders.sort(comparator);
+        }
+        return orders;
     }
 }
