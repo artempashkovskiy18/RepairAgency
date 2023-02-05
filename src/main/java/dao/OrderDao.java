@@ -163,7 +163,11 @@ public class OrderDao {
             updateStatement.setInt(2, order.getUser().getId());
             updateStatement.setString(3, order.getDescription());
             updateStatement.setInt(4, order.getStatus().getId());
-            updateStatement.setInt(5, order.getCraftsman().getId());
+            if(order.getCraftsman() == null){
+                updateStatement.setNull(5, Types.INTEGER);
+            }else{
+                updateStatement.setInt(5, order.getCraftsman().getId());
+            }
             updateStatement.setInt(6, order.getId());
 
             return updateStatement.executeUpdate() != 0;

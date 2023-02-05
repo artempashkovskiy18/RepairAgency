@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `repair_agency`.`users` (
     CONSTRAINT `id_role`
     FOREIGN KEY (`id_role`)
     REFERENCES `repair_agency`.`roles` (`id_role`)
-    ON DELETE NO ACTION
-    ON UPDATE CASCADE)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT)
     ENGINE = InnoDB;
 
 
@@ -78,18 +78,18 @@ CREATE TABLE IF NOT EXISTS `repair_agency`.`orders` (
     CONSTRAINT `id_user`
     FOREIGN KEY (`id_user`)
     REFERENCES `repair_agency`.`users` (`id_user`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
     CONSTRAINT `id_status`
     FOREIGN KEY (`id_status`)
     REFERENCES `repair_agency`.`statuses` (`id_status`)
-    ON DELETE NO ACTION
-    ON UPDATE CASCADE,
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
     CONSTRAINT `id_craftsman`
     FOREIGN KEY (`id_craftsman`)
     REFERENCES `repair_agency`.`users` (`id_user`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT)
     ENGINE = InnoDB;
 
 
@@ -98,9 +98,8 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
-insert into roles(name) values("user");
-insert into roles(name) values("manager");
-insert into roles(name) values("craftsman");
+insert into roles(name)
+values ("user"), ("manager"), ("craftsman");
 
 insert into statuses(name) values("pending_payment");
 insert into statuses(name) values("paid");

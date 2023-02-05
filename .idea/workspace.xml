@@ -9,12 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801d70c1-1a65-42a9-976e-e013ce1ffcc7" name="Changes" comment="relocate checking user logic from servlets to filters, add changing order status and price">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/SortServlet.java" afterDir="false" />
+    <list default="true" id="801d70c1-1a65-42a9-976e-e013ce1ffcc7" name="Changes" comment="added sorting orders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/OtherConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/OtherConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CommonServletMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CommonServletMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/createDbScriptFinal.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/createDbScriptFinal.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/servlet/SaveOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/servlet/SaveOrderServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +312,8 @@
       <workItem from="1675254543897" duration="6493000" />
       <workItem from="1675351886939" duration="10570000" />
       <workItem from="1675457090967" duration="857000" />
-      <workItem from="1675548984550" duration="5392000" />
+      <workItem from="1675548984550" duration="7653000" />
+      <workItem from="1675609321285" duration="6516000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1673971140269</created>
@@ -413,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675261243555</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added sorting orders">
+      <created>1675554416698</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1675554416698</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +454,8 @@
     <MESSAGE value="done creating order" />
     <MESSAGE value="added custom navAndSign tag" />
     <MESSAGE value="relocate checking user logic from servlets to filters, add changing order status and price" />
-    <option name="LAST_COMMIT_MESSAGE" value="relocate checking user logic from servlets to filters, add changing order status and price" />
+    <MESSAGE value="added sorting orders" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sorting orders" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -23,19 +23,19 @@ public class SaveOrderServlet extends HttpServlet {
         UserService userService = new UserService();
         User user = CommonServletMethods.getUserFromCookies(req.getCookies());
 
+        int id = Integer.parseInt(req.getParameter("id"));
         double price = 0;
         if (req.getParameter("price") != null) {
             price = Double.parseDouble(req.getParameter("price"));
         }
-        OrderStatus status = OrderStatus.valueOf(req.getParameter("status"));
-        int id = Integer.parseInt(req.getParameter("id"));
+        Order order = service.getOrder(id);
+        OrderStatus status = req.getParameter("status") == null ? order.getStatus() : OrderStatus.valueOf(req.getParameter("status"));
         User craftsman = null;
         if (req.getParameter("craftsmanId") != null) {
             craftsman = userService.getUser(Integer.parseInt(req.getParameter("craftsmanId")));
         }
 
 
-        Order order = service.getOrder(id);
         order.setStatus(status);
         order.setPrice(price);
         order.setCraftsman(craftsman);
