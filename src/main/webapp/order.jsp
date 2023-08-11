@@ -1,6 +1,5 @@
 <%@ page import="constants.OrderStatus" %>
 <%@ page import="constants.Role" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="navAndSignTags" prefix="nst" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

@@ -20,13 +20,14 @@ public class NavSignTag extends TagSupport {
                     "                <li><a href=\"createOrder.jsp\">Create order</a></li>\n" +
                     "            </ul>\n" +
                     "        </li>\n" +
-                    "        <li><a href=\"test.jsp\">Contacts</a></li>\n" +
+                    "        <li><a href=\"contacts.jsp\">Contacts</a></li>\n" +
                     "        <li><a href=\"\">About us</a></li>\n" +
-                    "        <li><a href=\"orders\">Get orders</a></li>\n" +
+                    "        <li><a href=\"orders\" id=\"get-orders-button\">Get orders</a></li>\n" +
                     "    </ul>\n" +
                     "    <div>\n" +
-                    "        <a class=\"float-right btn btn-outline-primary\" name=\"sign-in-button\">Sign in</a>\n" +
+                    "        <a class=\"float-right btn btn-outline-primary\" name=\"sign-in-button\">Log in</a>\n" +
                     "        <a class=\"float-right btn btn-outline-primary\" name=\"sign-up-button\" >Sign up</a>\n" +
+                    "        <a class=\"float-right btn btn-outline-primary\" name=\"log-out-button\" >Log out</a>\n" +
                     "    </div>\n" +
                     "</nav>");
 

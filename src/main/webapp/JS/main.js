@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let signInButtons = document.getElementsByName('sign-in-button');
     let signUpButtons = document.getElementsByName('sign-up-button');
     let closeButtons = document.getElementsByName('close');
+    let logOutButton =  document.getElementsByName("log-out-button").item(0);
     for (let i = 0; i < signInButtons.length; i++) {
         signInButtons[i].addEventListener('click', function(){
             document.getElementById('sign-in').style.display = 'flex';
@@ -19,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    logOutButton.addEventListener('click', function () {
+        document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        location.reload();
+    })
+
     $('#submit-sign-in').click(function (){
         var signInEmail = document.getElementById('sign-in-email');
         validateEmail(signInEmail, event);
@@ -29,6 +35,11 @@ document.addEventListener("DOMContentLoaded", function() {
         validateEmail(signUpEmail, event);
         validatePasswordsWhileRegistration(event);
     });
+
+    if (getCookie("email") === ""){
+        document.getElementById("get-orders-button").style.display = "none";
+        logOutButton.style.display = "none";
+    }
 });
 
 const validateEmail = (email, event) => {
@@ -48,3 +59,18 @@ const validatePasswordsWhileRegistration = (event) => {
         repeatPassword.style.border = '2px solid red';
     }
 };
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}

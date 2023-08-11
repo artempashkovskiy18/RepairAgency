@@ -90,6 +90,7 @@ table {
     border-collapse: collapse;
     border: 3px solid black;
     word-break: break-all;
+    background-color: white;
 }
 
 .center-block {
@@ -104,4 +105,22 @@ table {
 
 .order-container {
     width: 70%;
+}
+
+body {
+    background-image: url('../Images/background.png');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.static-content{
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 80%;
+    border-radius: 20px;
 }

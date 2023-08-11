@@ -2,7 +2,7 @@
 <%@ taglib uri="navAndSignTags" prefix="nst" %>
 <html>
 <head>
-    <title>Error</title>
+    <title>Title</title>
     <link href="CSS/style.css" rel="stylesheet">
     <script src="JS/main.js"></script>
 
@@ -14,6 +14,13 @@
 </head>
 <body>
     <nst:navSignTag/>
-    <h1>An error occurred: ${requestScope.errorMessage} </h1>
+    <div class="static-content">
+        <h1>Contact information</h1>
+        <p>Email: artempashkovskiy18@gmail.com</p>
+        <p>Phone number: +380964568447</p>
+        <h1>Our location</h1>
+        <p>Our location: Lviv, Shpytal'na str, 11</p>
+        <h2>Feel free to contact us if you have any questions</h2>
+    </div>
 </body>
 </html>

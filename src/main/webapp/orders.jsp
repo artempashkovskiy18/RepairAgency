@@ -38,9 +38,9 @@
 <div class="orders">
     <table border="1">
         <tr>
-            <th>User name</th>
-            <th>User email</th>
-            <th>User phone</th>
+            <th>Customer name</th>
+            <th>Customer email</th>
+            <th>Customer phone</th>
             <th>Status</th>
             <th>Price</th>
             <th>Description</th>
